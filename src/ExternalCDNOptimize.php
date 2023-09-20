@@ -339,6 +339,7 @@ class ExternalCDNOptimize
         $url = self::externalCdnVCCorpCMSOptimize($url, $width, $height);
         $url = self::externalCdnOneCMSOptimize($url, $width, $height);
         $url = self::externalCdnNetLinkCMSOptimize($url, $width, $height);
+        $url = str_replace('https://img.cand.com.vn/resize/800x800', 'https://img.cand.com.vn/resize/600x600', $url);
         $url = str_replace('https://static.kinhtedothi.vn/600x315/images', 'https://static.kinhtedothi.vn/640x360/images', $url);
         $url = str_replace('https://static.kinhtedothi.vn/images', 'https://static.kinhtedothi.vn/640x360/images', $url);
         $url = str_replace('https://cdnmedia.webthethao.vn/thumb/600-315/uploads', 'https://cdnmedia.webthethao.vn/thumb/' . trim($width) . 'x' . trim($height) . '/uploads', $url);
