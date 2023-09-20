@@ -1,6 +1,6 @@
-# Image Helper
+# Smart Bear CMS Packages: External CDN Optimize
 
-Simple Image Helper, basic, simple and lightweight
+Simple Helper, basic, simple and lightweight
 
 ## Version
 
