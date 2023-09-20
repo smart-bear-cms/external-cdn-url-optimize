@@ -122,20 +122,36 @@ class ExternalCDNOptimize
         if (empty($url)) {
             return $url;
         }
+        $url = str_replace(array(
+                               '/thumb_w/1200/',
+                               '/thumb_w/1100/',
+                               '/thumb_w/1000/',
+                               '/thumb_w/900/',
+                               '/thumb_w/800/',
+                               '/thumb_w/700/',
+                               '/thumb_w/600/',
+                               '/thumb_w/500/',
+                               '/thumb_w/400/',
+                               '/thumb_w/300/',
+                               '/thumb_w/260/',
+                               '/thumb_w/230/',
+                               '/thumb_w/200/',
+                           ), '/zoom/600_315/', $url);
         // tuoitre
+
         $url = str_replace('https://cdn1.tuoitre.vn/20', 'https://cdn1.tuoitre.vn/zoom/600_315/20', $url);
         $url = str_replace('https://cdn.tuoitre.vn/zoom/600_315/', 'https://cdn.tuoitre.vn/thumb_w/' . trim($width) . '/', $url);
         $url = str_replace('https://cdn.tuoitre.vn/47', 'https://cdn.tuoitre.vn/thumb_w/' . trim($width) . '/47', $url);
         $url = str_replace('https://cdn.tuoitre.vn/20', 'https://cdn.tuoitre.vn/thumb_w/' . trim($width) . '/20', $url);
         // VC CORP
-        $url = str_replace('https://afamilycdn.com/15', 'https://afamilycdn.com/thumb_w/' . trim($width) . '/15', $url);
-        $url = str_replace('https://cafebiz.cafebizcdn.vn/16', 'https://cafebiz.cafebizcdn.vn/thumb_w/' . trim($width) . '/16', $url);
+        $url = str_replace('https://afamilycdn.com/1', 'https://afamilycdn.com/thumb_w/' . trim($width) . '/1', $url);
+        $url = str_replace('https://cafebiz.cafebizcdn.vn/1', 'https://cafebiz.cafebizcdn.vn/thumb_w/' . trim($width) . '/1', $url);
         $url = str_replace('https://cafefcdn.com/2', 'https://cafefcdn.com/thumb_w/' . trim($width) . '/2', $url);
-        $url = str_replace('https://danviet.mediacdn.vn/29', 'https://danviet.mediacdn.vn/thumb_w/' . trim($width) . '/29', $url);
-        $url = str_replace('https://images2.thanhnien.vn/52', 'https://images2.thanhnien.vn/thumb_w/' . trim($width) . '/52', $url);
-        $url = str_replace('https://kenh14cdn.com/20', 'https://kenh14cdn.com/thumb_w/' . trim($width) . '/20', $url);
-        $url = str_replace('https://sohanews.sohacdn.com/16', 'https://sohanews.sohacdn.com/thumb_w/' . trim($width) . '/16', $url);
-        $url = str_replace('https://vtv1.mediacdn.vn/56', 'https://vtv1.mediacdn.vn/thumb_w/' . trim($width) . '/56', $url);
+        $url = str_replace('https://danviet.mediacdn.vn/2', 'https://danviet.mediacdn.vn/thumb_w/' . trim($width) . '/2', $url);
+        $url = str_replace('https://images2.thanhnien.vn/5', 'https://images2.thanhnien.vn/thumb_w/' . trim($width) . '/5', $url);
+        $url = str_replace('https://kenh14cdn.com/2', 'https://kenh14cdn.com/thumb_w/' . trim($width) . '/2', $url);
+        $url = str_replace('https://sohanews.sohacdn.com/1', 'https://sohanews.sohacdn.com/thumb_w/' . trim($width) . '/1', $url);
+        $url = str_replace('https://vtv1.mediacdn.vn/5', 'https://vtv1.mediacdn.vn/thumb_w/' . trim($width) . '/5', $url);
         $url = str_replace('https://afamilycdn.com/zoom/600_315/', 'https://afamilycdn.com/thumb_w/' . trim($width) . '/', $url);
         $url = str_replace('https://cafebiz.cafebizcdn.vn/zoom/600_315/', 'https://cafebiz.cafebizcdn.vn/thumb_w/' . trim($width) . '/', $url);
         $url = str_replace('https://cafefcdn.com/zoom/600_315/', 'https://cafefcdn.com/thumb_w/' . trim($width) . '/', $url);
@@ -146,10 +162,18 @@ class ExternalCDNOptimize
         $url = str_replace('https://autopro8.mediacdn.vn/zoom/600_315/', 'https://autopro8.mediacdn.vn/thumb_w/' . trim($width) . '/', $url);
         $url = str_replace('https://vtv1.mediacdn.vn/zoom/600_315/', 'https://vtv1.mediacdn.vn/thumb_w/' . trim($width) . '/', $url);
         $url = str_replace('https://vtv1.mediacdn.vn/fb_thumb_bn/', 'https://vtv1.mediacdn.vn/thumb_w/' . trim($width) . '/', $url);
-        $url = str_replace('https://toquoc.mediacdn.vn/thumb_w/600/', 'https://toquoc.mediacdn.vn/thumb_w/' . trim($width) . '/', $url);
         $url = str_replace('https://toquoc.mediacdn.vn/zoom/600_315/', 'https://toquoc.mediacdn.vn/thumb_w/' . trim($width) . '/', $url);
-        $url = str_replace('https://toquoc.mediacdn.vn/fb_thumb_bn/', 'https://toquoc.mediacdn.vn/thumb_w/' . trim($width) . '/', $url);
         $url = str_replace('https://toquoc.mediacdn.vn/2', 'https://toquoc.mediacdn.vn/thumb_w/' . trim($width) . '/2', $url);
+        $url = str_replace('https://thethaovanhoa.mediacdn.vn/zoom/600_315/', 'https://thethaovanhoa.mediacdn.vn/thumb_w/' . trim($width) . '/', $url);
+        $url = str_replace('https://thethaovanhoa.mediacdn.vn/Upload', 'https://thethaovanhoa.mediacdn.vn/thumb_w/' . trim($width) . '/Upload', $url);
+        $url = str_replace('https://phunuvietnam.mediacdn.vn/zoom/600_315/', 'https://phunuvietnam.mediacdn.vn/thumb_w/' . trim($width) . '/', $url);
+        $url = str_replace('https://phunuvietnam.mediacdn.vn/1', 'https://phunuvietnam.mediacdn.vn/thumb_w/' . trim($width) . '/1', $url);
+        $url = str_replace('https://nld.mediacdn.vn/zoom/600_315/', 'https://nld.mediacdn.vn/thumb_w/' . trim($width) . '/', $url);
+        $url = str_replace('https://nld.mediacdn.vn/2', 'https://nld.mediacdn.vn/thumb_w/' . trim($width) . '/2', $url);
+        $url = str_replace('https://gamek.mediacdn.vn/zoom/600_315/', 'https://gamek.mediacdn.vn/thumb_w/' . trim($width) . '/', $url);
+        $url = str_replace('https://gamek.mediacdn.vn/1', 'https://gamek.mediacdn.vn/thumb_w/' . trim($width) . '/1', $url);
+        $url = str_replace('https://genk.mediacdn.vn/zoom/600_315/', 'https://genk.mediacdn.vn/thumb_w/' . trim($width) . '/', $url);
+        $url = str_replace('https://genk.mediacdn.vn/1', 'https://genk.mediacdn.vn/thumb_w/' . trim($width) . '/1', $url);
         return trim($url);
     }
 
