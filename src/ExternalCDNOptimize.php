@@ -92,6 +92,19 @@ class ExternalCDNOptimize
         return trim($url);
     }
 
+    public static function externalVovCdnResize($url = '', $default = 'front_small')
+    {
+        $url = trim($url);
+        if (empty($url)) {
+            return $url;
+        }
+        $url = str_replace('styles/og_image', 'styles/' . trim($default), $url);
+        $url = str_replace('styles/front_large', 'styles/' . trim($default), $url);
+        $url = str_replace('styles/front_medium', 'styles/' . trim($default), $url);
+        $url = str_replace('styles/front_small', 'styles/' . trim($default), $url);
+        return trim($url);
+    }
+
     public static function externalCdnWorkWithUrlQueryResize()
     {
         return [
