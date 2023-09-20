@@ -349,18 +349,30 @@ class ExternalCDNOptimize
         $url = str_replace('https://media.bongda.com.vn/resize/1200x630/files', 'https://media.bongda.com.vn/resize/' . trim($width) . 'x' . trim($height) . '/files', $url);
         $url = str_replace('https://media.bongda.com.vn/resize/600x312/files', 'https://media.bongda.com.vn/resize/' . trim($width) . 'x' . trim($height) . '/files', $url);
         $url = str_replace('https://media.bongda.com.vn/files', 'https://media.bongda.com.vn/resize/' . trim($width) . 'x' . trim($height) . '/files', $url);
+        // Yeah1 Group
         $url = str_replace('https://media.yeah1.com/resize/1200x630/files/', 'https://media.yeah1.com/resize/' . trim($width) . 'x' . trim($height) . '/files/', $url);
         $url = str_replace('https://media.yeah1.com/resize/680x415/files/', 'https://media.yeah1.com/resize/' . trim($width) . 'x' . trim($height) . '/files/', $url);
+        $url = str_replace('https://media.yeah1.com/resize/600x315/files/', 'https://media.yeah1.com/resize/' . trim($width) . 'x' . trim($height) . '/files/', $url);
+        $url = str_replace('https://media.yeah1.com/resize/files/', 'https://media.yeah1.com/resize/' . trim($width) . 'x' . trim($height) . '/files/', $url);
+        $url = str_replace('https://media.yeah1.com/files/', 'https://media.yeah1.com/resize/' . trim($width) . 'x' . trim($height) . '/files/', $url);
+        $url = str_replace('https://cdnmedia.tinmoi.vn/resize_1200x630/upload/', 'https://cdnmedia.tinmoi.vn/resize_' . trim($width) . 'x' . trim($height) . '/upload/', $url);
+        $url = str_replace('https://cdnmedia.tinmoi.vn/resize_680x415/upload/', 'https://cdnmedia.tinmoi.vn/resize_' . trim($width) . 'x' . trim($height) . '/upload/', $url);
+        $url = str_replace('https://cdnmedia.tinmoi.vn/resize_600x315/upload/', 'https://cdnmedia.tinmoi.vn/resize_' . trim($width) . 'x' . trim($height) . '/upload/', $url);
+        $url = str_replace('https://cdnmedia.tinmoi.vn/resize_upload/', 'https://cdnmedia.tinmoi.vn/resize_' . trim($width) . 'x' . trim($height) . '/upload/', $url);
+        $url = str_replace('https://cdnmedia.tinmoi.vn/upload/', 'https://cdnmedia.tinmoi.vn/resize_' . trim($width) . 'x' . trim($height) . '/upload/', $url);
+        // PhuNuToDay
         $url = str_replace('https://imgamp.phunutoday.vn/resize/1200x627/files/', 'https://thumb.phunutoday.vn/resize/' . trim($width) . 'x' . trim($height) . '/files/', $url);
         $url = str_replace('https://imgamp.phunutoday.vn/resize/1200x630/files/', 'https://thumb.phunutoday.vn/resize/' . trim($width) . 'x' . trim($height) . '/files/', $url);
         $url = str_replace('https://imgamp.phunutoday.vn/resize/700x400/files/', 'https://thumb.phunutoday.vn/resize/' . trim($width) . 'x' . trim($height) . '/files/', $url);
         $url = str_replace('https://imgamp.phunutoday.vn/resize/600x312/files/', 'https://thumb.phunutoday.vn/resize/' . trim($width) . 'x' . trim($height) . '/files/', $url);
         $url = str_replace('https://imgamp.phunutoday.vn/files/', 'https://thumb.phunutoday.vn/resize/' . trim($width) . 'x' . trim($height) . '/files/', $url);
+        // CongLuan.vn
         $url = str_replace('https://congluan-cdn.congluan.vn/resize/1200x627/files', 'https://congluan-cdn.congluan.vn/resize/' . trim($width) . 'x' . trim($height) . '/files', $url);
         $url = str_replace('https://congluan-cdn.congluan.vn/resize/1200x630/files', 'https://congluan-cdn.congluan.vn/resize/' . trim($width) . 'x' . trim($height) . '/files', $url);
         $url = str_replace('https://congluan-cdn.congluan.vn/resize/700x400/files', 'https://congluan-cdn.congluan.vn/resize/' . trim($width) . 'x' . trim($height) . '/files', $url);
         $url = str_replace('https://congluan-cdn.congluan.vn/resize/600x312/files', 'https://congluan-cdn.congluan.vn/resize/' . trim($width) . 'x' . trim($height) . '/files', $url);
         $url = str_replace('https://congluan-cdn.congluan.vn/files', 'https://congluan-cdn.congluan.vn/resize/' . trim($width) . 'x' . trim($height) . '/files', $url);
+        // TiepThiGiaDinh.vn
         $url = str_replace('https://media.tiepthigiadinh.vn/resize/1200x627/files', 'https://media.tiepthigiadinh.vn/resize/' . trim($width) . 'x' . trim($height) . '/files', $url);
         $url = str_replace('https://media.tiepthigiadinh.vn/resize/1200x630/files', 'https://media.tiepthigiadinh.vn/resize/' . trim($width) . 'x' . trim($height) . '/files', $url);
         $url = str_replace('https://media.tiepthigiadinh.vn/resize/700x400/files', 'https://media.tiepthigiadinh.vn/resize/' . trim($width) . 'x' . trim($height) . '/files', $url);
