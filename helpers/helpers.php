@@ -1,12 +1,12 @@
 <?php
 if (!function_exists('smart_bear_cms_cdn_url_http_to_https')) {
-    function smart_bear_cms_cdn_url_http_to_https($url)
+    function smart_bear_cms_cdn_url_http_to_https($url = '')
     {
         return \nguyenanhung\Platforms\SmartBearCMS\Library\ExternalCDNOptimize\ExternalCDNOptimize::httpToHttps($url);
     }
 }
 if (!function_exists('smart_bear_cms_cdn_url_change_domain')) {
-    function smart_bear_cms_cdn_url_change_domain($url)
+    function smart_bear_cms_cdn_url_change_domain($url = '')
     {
         return \nguyenanhung\Platforms\SmartBearCMS\Library\ExternalCDNOptimize\ExternalCDNOptimize::changeDomain($url);
     }

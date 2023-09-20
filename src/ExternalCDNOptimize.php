@@ -58,7 +58,7 @@ class ExternalCDNOptimize
         return trim($url);
     }
 
-    public static function changeDomain($url)
+    public static function changeDomain($url = '')
     {
         $url = trim($url);
         if (empty($url)) {
