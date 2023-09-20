@@ -12,7 +12,7 @@ namespace nguyenanhung\Platforms\SmartBearCMS\Library\ExternalCDNOptimize;
 
 class ExternalCDNOptimize
 {
-    const VERSION = '1.0.0';
+    const VERSION = '1.0.1';
 
     public function getVersion()
     {
@@ -92,6 +92,16 @@ class ExternalCDNOptimize
         return trim($url);
     }
 
+    public static function externalCdnWorkWithUrlQueryResize()
+    {
+        return [
+            'cdn.vietnambiz.vn',
+            'ttol.vietnamnetjsc.vn',
+            'static-images.vnncdn.net',
+            'static2-images.vnncdn.net',
+        ];
+    }
+
     public static function externalCdnEPICMSOptimize($url = '', $width = 345, $height = 200)
     {
         $url = trim($url);
@@ -123,20 +133,20 @@ class ExternalCDNOptimize
             return $url;
         }
         $url = str_replace(array(
-                               '/thumb_w/1200/',
-                               '/thumb_w/1100/',
-                               '/thumb_w/1000/',
-                               '/thumb_w/900/',
-                               '/thumb_w/800/',
-                               '/thumb_w/700/',
-                               '/thumb_w/600/',
-                               '/thumb_w/500/',
-                               '/thumb_w/400/',
-                               '/thumb_w/300/',
-                               '/thumb_w/260/',
-                               '/thumb_w/230/',
-                               '/thumb_w/200/',
-                           ), '/zoom/600_315/', $url);
+            '/thumb_w/1200/',
+            '/thumb_w/1100/',
+            '/thumb_w/1000/',
+            '/thumb_w/900/',
+            '/thumb_w/800/',
+            '/thumb_w/700/',
+            '/thumb_w/600/',
+            '/thumb_w/500/',
+            '/thumb_w/400/',
+            '/thumb_w/300/',
+            '/thumb_w/260/',
+            '/thumb_w/230/',
+            '/thumb_w/200/',
+        ), '/zoom/600_315/', $url);
         // tuoitre
 
         $url = str_replace('https://cdn1.tuoitre.vn/20', 'https://cdn1.tuoitre.vn/zoom/600_315/20', $url);
@@ -323,12 +333,7 @@ class ExternalCDNOptimize
             return $url;
         }
         // Xử lý cho vietnamnet, 2sao, vietnambiz, tintuconline
-        $arrayList = [
-            'cdn.vietnambiz.vn',
-            'ttol.vietnamnetjsc.vn',
-            'static-images.vnncdn.net',
-            'static2-images.vnncdn.net',
-        ];
+        $arrayList = self::externalCdnWorkWithUrlQueryResize();
         $parseUrl = parse_url($url);
         if (isset($parseUrl['host']) && in_array($parseUrl['host'], $arrayList, true)) {
             $url = self::urlQueryRemoved($url);
