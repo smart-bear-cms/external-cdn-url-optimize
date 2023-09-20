@@ -92,24 +92,11 @@ class ExternalCDNOptimize
         return trim($url);
     }
 
-    public static function externalCdnOptimize($url = '', $width = 345, $height = 200)
+    public static function externalCdnEPICMSOptimize($url = '', $width = 345, $height = 200)
     {
         $url = trim($url);
         if (empty($url)) {
             return $url;
-        }
-        // Xử lý cho vietnamnet, 2sao, vietnambiz, tintuconline
-        $arrayList = [
-            'cdn.vietnambiz.vn',
-            'ttol.vietnamnetjsc.vn',
-            'static-images.vnncdn.net',
-            'static2-images.vnncdn.net',
-        ];
-        $parseUrl = parse_url($url);
-        if (isset($parseUrl['host']) && in_array($parseUrl['host'], $arrayList, true)) {
-            $url = self::urlQueryRemoved($url);
-            $url .= '?width=' . trim($width);
-            return trim($url);
         }
         // EPI CMS
         $url = str_replace('https://vov-media.emitech.vn/sites/default/files/styles/og_image/', 'https://media.vov.vn/sites/default/files/styles/front_medium/', $url);
@@ -120,14 +107,21 @@ class ExternalCDNOptimize
         $url = str_replace('https://media.vov.vn/sites/default/files/styles/front_large/', 'https://media.vov.vn/sites/default/files/styles/front_medium/', $url);
         $url = str_replace('https://media.vov.vn/sites/default/files/styles/front_small/', 'https://media.vov.vn/sites/default/files/styles/front_medium/', $url);
 
-        $url = str_replace('https://static.kinhtedothi.vn/600x315/images', 'https://static.kinhtedothi.vn/640x360/images', $url);
-        $url = str_replace('https://static.kinhtedothi.vn/images', 'https://static.kinhtedothi.vn/640x360/images', $url);
         $url = str_replace('https://image.tienphong.vn/1200x630/Uploaded', 'https://image.tienphong.vn/600x315/Uploaded', $url);
         $url = str_replace('https://image.tienphong.vn/Uploaded', 'https://image.tienphong.vn/600x315/Uploaded', $url);
         $url = str_replace('https://image.ngaynay.vn/1200x630/Uploaded', 'https://image.ngaynay.vn/600x315/Uploaded', $url);
         $url = str_replace('https://image.ngaynay.vn/Uploaded', 'https://image.ngaynay.vn/600x315/Uploaded', $url);
         $url = str_replace('https://image.nhandan.vn/1200x630/Uploaded', 'https://image.nhandan.vn/600x315/Uploaded', $url);
         $url = str_replace('https://image.nhandan.vn/Uploaded', 'https://image.nhandan.vn/600x315/Uploaded', $url);
+        return trim($url);
+    }
+
+    public static function externalCdnVCCorpCMSOptimize($url = '', $width = 345, $height = 200)
+    {
+        $url = trim($url);
+        if (empty($url)) {
+            return $url;
+        }
         // tuoitre
         $url = str_replace('https://cdn1.tuoitre.vn/20', 'https://cdn1.tuoitre.vn/zoom/600_315/20', $url);
         $url = str_replace('https://cdn.tuoitre.vn/zoom/600_315/', 'https://cdn.tuoitre.vn/thumb_w/' . trim($width) . '/', $url);
@@ -156,6 +150,15 @@ class ExternalCDNOptimize
         $url = str_replace('https://toquoc.mediacdn.vn/zoom/600_315/', 'https://toquoc.mediacdn.vn/thumb_w/' . trim($width) . '/', $url);
         $url = str_replace('https://toquoc.mediacdn.vn/fb_thumb_bn/', 'https://toquoc.mediacdn.vn/thumb_w/' . trim($width) . '/', $url);
         $url = str_replace('https://toquoc.mediacdn.vn/2', 'https://toquoc.mediacdn.vn/thumb_w/' . trim($width) . '/2', $url);
+        return trim($url);
+    }
+
+    public static function externalCdnOneCMSOptimize($url = '', $width = 345, $height = 200)
+    {
+        $url = trim($url);
+        if (empty($url)) {
+            return $url;
+        }
         // OneCMS CDN
         $url = str_replace('https://vb.1cdn.vn/thumbs/680x425/', 'https://vb.1cdn.vn/thumbs/' . trim($width) . 'x' . trim($height) . '/', $url);
         $url = str_replace('https://vb.1cdn.vn/thumbs/600x315/', 'https://vb.1cdn.vn/thumbs/' . trim($width) . 'x' . trim($height) . '/', $url);
@@ -213,7 +216,107 @@ class ExternalCDNOptimize
         $url = str_replace('https://daknong.1cdn.vn/thumbs/680x425/', 'https://daknong.1cdn.vn/thumbs/' . trim($width) . 'x' . trim($height) . '/', $url);
         $url = str_replace('https://daknong.1cdn.vn/thumbs/600x315/', 'https://daknong.1cdn.vn/thumbs/' . trim($width) . 'x' . trim($height) . '/', $url);
         $url = str_replace('https://daknong.1cdn.vn/20', 'https://daknong.1cdn.vn/thumbs/' . trim($width) . 'x' . trim($height) . '/20', $url);
-        // Other Site
+        return trim($url);
+    }
+
+    public static function externalCdnNetLinkCMSOptimize($url = '', $width = 345, $height = 200)
+    {
+        $url = trim($url);
+        if (empty($url)) {
+            return $url;
+        }
+        // NetLink CMS
+        $url = str_replace('https://media.nguoiduatin.vn/thumb_x1200x630/media', 'https://media.nguoiduatin.vn/thumb_x' . trim($width) . 'x' . trim($height) . '/media', $url);
+        $url = str_replace('https://media.nguoiduatin.vn/thumb_x600x315/media', 'https://media.nguoiduatin.vn/thumb_x' . trim($width) . 'x' . trim($height) . '/media', $url);
+        $url = str_replace('https://media.nguoiduatin.vn/thumb_x600x600/media', 'https://media.nguoiduatin.vn/thumb_x' . trim($width) . 'x' . trim($height) . '/media', $url);
+        $url = str_replace('https://media.nguoiduatin.vn/thumb_x470x250/media', 'https://media.nguoiduatin.vn/thumb_x' . trim($width) . 'x' . trim($height) . '/media', $url);
+        $url = str_replace('https://media.nguoiduatin.vn/thumb_x500x263/media', 'https://media.nguoiduatin.vn/thumb_x' . trim($width) . 'x' . trim($height) . '/media', $url);
+        $url = str_replace('https://media.nguoiduatin.vn/thumb_x534x280/media', 'https://media.nguoiduatin.vn/thumb_x' . trim($width) . 'x' . trim($height) . '/media', $url);
+        $url = str_replace('https://media.nguoiduatin.vn/thumb_x400x240/media', 'https://media.nguoiduatin.vn/thumb_x' . trim($width) . 'x' . trim($height) . '/media', $url);
+        $url = str_replace('https://media.nguoiduatin.vn/thumb_x200x125/media', 'https://media.nguoiduatin.vn/thumb_x' . trim($width) . 'x' . trim($height) . '/media', $url);
+        $url = str_replace('https://media.nguoiduatin.vn/media', 'https://media.nguoiduatin.vn/thumb_x' . trim($width) . 'x' . trim($height) . '/media', $url);
+        $url = str_replace('https://media1.nguoiduatin.vn/thumb_x1200x630/media', 'https://media1.nguoiduatin.vn/thumb_x' . trim($width) . 'x' . trim($height) . '/media', $url);
+        $url = str_replace('https://media1.nguoiduatin.vn/thumb_x600x315/media', 'https://media1.nguoiduatin.vn/thumb_x' . trim($width) . 'x' . trim($height) . '/media', $url);
+        $url = str_replace('https://media1.nguoiduatin.vn/thumb_x600x600/media', 'https://media1.nguoiduatin.vn/thumb_x' . trim($width) . 'x' . trim($height) . '/media', $url);
+        $url = str_replace('https://media1.nguoiduatin.vn/thumb_x470x250/media', 'https://media1.nguoiduatin.vn/thumb_x' . trim($width) . 'x' . trim($height) . '/media', $url);
+        $url = str_replace('https://media1.nguoiduatin.vn/thumb_x500x263/media', 'https://media1.nguoiduatin.vn/thumb_x' . trim($width) . 'x' . trim($height) . '/media', $url);
+        $url = str_replace('https://media1.nguoiduatin.vn/thumb_x534x280/media', 'https://media1.nguoiduatin.vn/thumb_x' . trim($width) . 'x' . trim($height) . '/media', $url);
+        $url = str_replace('https://media1.nguoiduatin.vn/thumb_x400x240/media', 'https://media1.nguoiduatin.vn/thumb_x' . trim($width) . 'x' . trim($height) . '/media', $url);
+        $url = str_replace('https://media1.nguoiduatin.vn/thumb_x200x125/media', 'https://media1.nguoiduatin.vn/thumb_x' . trim($width) . 'x' . trim($height) . '/media', $url);
+        $url = str_replace('https://media1.nguoiduatin.vn/media', 'https://media1.nguoiduatin.vn/thumb_x' . trim($width) . 'x' . trim($height) . '/media', $url);
+        $url = str_replace('https://media.doisongphapluat.com/thumb_x1200x630/media', 'https://media.doisongphapluat.com/thumb_x' . trim($width) . 'x' . trim($height) . '/media', $url);
+        $url = str_replace('https://media.doisongphapluat.com/thumb_x600x315/media', 'https://media.doisongphapluat.com/thumb_x' . trim($width) . 'x' . trim($height) . '/media', $url);
+        $url = str_replace('https://media.doisongphapluat.com/thumb_x600x600/media', 'https://media.doisongphapluat.com/thumb_x' . trim($width) . 'x' . trim($height) . '/media', $url);
+        $url = str_replace('https://media.doisongphapluat.com/thumb_x470x250/media', 'https://media.doisongphapluat.com/thumb_x' . trim($width) . 'x' . trim($height) . '/media', $url);
+        $url = str_replace('https://media.doisongphapluat.com/thumb_x500x263/media', 'https://media.doisongphapluat.com/thumb_x' . trim($width) . 'x' . trim($height) . '/media', $url);
+        $url = str_replace('https://media.doisongphapluat.com/thumb_x534x280/media', 'https://media.doisongphapluat.com/thumb_x' . trim($width) . 'x' . trim($height) . '/media', $url);
+        $url = str_replace('https://media.doisongphapluat.com/thumb_x400x240/media', 'https://media.doisongphapluat.com/thumb_x' . trim($width) . 'x' . trim($height) . '/media', $url);
+        $url = str_replace('https://media.doisongphapluat.com/thumb_x200x125/media', 'https://media.doisongphapluat.com/thumb_x' . trim($width) . 'x' . trim($height) . '/media', $url);
+        $url = str_replace('https://media.doisongphapluat.com/media', 'https://media.doisongphapluat.com/thumb_x' . trim($width) . 'x' . trim($height) . '/media', $url);
+        $url = str_replace('https://media.techz.vn/thumb_x1200x630/media', 'https://media.techz.vn/thumb_x' . trim($width) . 'x' . trim($height) . '/media', $url);
+        $url = str_replace('https://media.techz.vn/thumb_x600x315/media', 'https://media.techz.vn/thumb_x' . trim($width) . 'x' . trim($height) . '/media', $url);
+        $url = str_replace('https://media.techz.vn/thumb_x600x600/media', 'https://media.techz.vn/thumb_x' . trim($width) . 'x' . trim($height) . '/media', $url);
+        $url = str_replace('https://media.techz.vn/thumb_x470x250/media', 'https://media.techz.vn/thumb_x' . trim($width) . 'x' . trim($height) . '/media', $url);
+        $url = str_replace('https://media.techz.vn/thumb_x500x263/media', 'https://media.techz.vn/thumb_x' . trim($width) . 'x' . trim($height) . '/media', $url);
+        $url = str_replace('https://media.techz.vn/thumb_x534x280/media', 'https://media.techz.vn/thumb_x' . trim($width) . 'x' . trim($height) . '/media', $url);
+        $url = str_replace('https://media.techz.vn/thumb_x400x240/media', 'https://media.techz.vn/thumb_x' . trim($width) . 'x' . trim($height) . '/media', $url);
+        $url = str_replace('https://media.techz.vn/thumb_x200x125/media', 'https://media.techz.vn/thumb_x' . trim($width) . 'x' . trim($height) . '/media', $url);
+        $url = str_replace('https://media.techz.vn/media', 'https://media.techz.vn/thumb_x' . trim($width) . 'x' . trim($height) . '/media', $url);
+        $url = str_replace('https://media.baodautu.vn/thumb_x1200x630/media', 'https://media.baodautu.vn/thumb_x' . trim($width) . 'x' . trim($height) . '/media', $url);
+        $url = str_replace('https://media.baodautu.vn/thumb_x600x315/media', 'https://media.baodautu.vn/thumb_x' . trim($width) . 'x' . trim($height) . '/media', $url);
+        $url = str_replace('https://media.baodautu.vn/thumb_x600x600/media', 'https://media.baodautu.vn/thumb_x' . trim($width) . 'x' . trim($height) . '/media', $url);
+        $url = str_replace('https://media.baodautu.vn/thumb_x470x250/media', 'https://media.baodautu.vn/thumb_x' . trim($width) . 'x' . trim($height) . '/media', $url);
+        $url = str_replace('https://media.baodautu.vn/thumb_x500x263/media', 'https://media.baodautu.vn/thumb_x' . trim($width) . 'x' . trim($height) . '/media', $url);
+        $url = str_replace('https://media.baodautu.vn/thumb_x534x280/media', 'https://media.baodautu.vn/thumb_x' . trim($width) . 'x' . trim($height) . '/media', $url);
+        $url = str_replace('https://media.baodautu.vn/thumb_x400x240/media', 'https://media.baodautu.vn/thumb_x' . trim($width) . 'x' . trim($height) . '/media', $url);
+        $url = str_replace('https://media.baodautu.vn/thumb_x200x125/media', 'https://media.baodautu.vn/thumb_x' . trim($width) . 'x' . trim($height) . '/media', $url);
+        $url = str_replace('https://media.baodautu.vn/media', 'https://media.baodautu.vn/thumb_x' . trim($width) . 'x' . trim($height) . '/media', $url);
+        $url = str_replace('https://media.baodautu.vn/thumb_x1200x630/Images', 'https://media.baodautu.vn/thumb_x' . trim($width) . 'x' . trim($height) . '/Images', $url);
+        $url = str_replace('https://media.baodautu.vn/thumb_x600x315/Images', 'https://media.baodautu.vn/thumb_x' . trim($width) . 'x' . trim($height) . '/Images', $url);
+        $url = str_replace('https://media.baodautu.vn/thumb_x600x600/Images', 'https://media.baodautu.vn/thumb_x' . trim($width) . 'x' . trim($height) . '/Images', $url);
+        $url = str_replace('https://media.baodautu.vn/thumb_x470x250/Images', 'https://media.baodautu.vn/thumb_x' . trim($width) . 'x' . trim($height) . '/Images', $url);
+        $url = str_replace('https://media.baodautu.vn/thumb_x500x263/Images', 'https://media.baodautu.vn/thumb_x' . trim($width) . 'x' . trim($height) . '/Images', $url);
+        $url = str_replace('https://media.baodautu.vn/thumb_x534x280/Images', 'https://media.baodautu.vn/thumb_x' . trim($width) . 'x' . trim($height) . '/Images', $url);
+        $url = str_replace('https://media.baodautu.vn/thumb_x400x240/Images', 'https://media.baodautu.vn/thumb_x' . trim($width) . 'x' . trim($height) . '/Images', $url);
+        $url = str_replace('https://media.baodautu.vn/thumb_x200x125/Images', 'https://media.baodautu.vn/thumb_x' . trim($width) . 'x' . trim($height) . '/Images', $url);
+        $url = str_replace('https://media.baodautu.vn/Images', 'https://media.baodautu.vn/thumb_x' . trim($width) . 'x' . trim($height) . '/Images', $url);
+        $url = str_replace('https://media.baodansinh.vn/thumb_x1200x630/files', 'https://media.baodansinh.vn/thumb_x' . trim($width) . 'x' . trim($height) . '/files', $url);
+        $url = str_replace('https://media.baodansinh.vn/thumb_x600x315/files', 'https://media.baodansinh.vn/thumb_x' . trim($width) . 'x' . trim($height) . '/files', $url);
+        $url = str_replace('https://media.baodansinh.vn/thumb_x600x600/files', 'https://media.baodansinh.vn/thumb_x' . trim($width) . 'x' . trim($height) . '/files', $url);
+        $url = str_replace('https://media.baodansinh.vn/thumb_x470x250/files', 'https://media.baodansinh.vn/thumb_x' . trim($width) . 'x' . trim($height) . '/files', $url);
+        $url = str_replace('https://media.baodansinh.vn/thumb_x500x263/files', 'https://media.baodansinh.vn/thumb_x' . trim($width) . 'x' . trim($height) . '/files', $url);
+        $url = str_replace('https://media.baodansinh.vn/thumb_x534x280/files', 'https://media.baodansinh.vn/thumb_x' . trim($width) . 'x' . trim($height) . '/files', $url);
+        $url = str_replace('https://media.baodansinh.vn/thumb_x400x240/files', 'https://media.baodansinh.vn/thumb_x' . trim($width) . 'x' . trim($height) . '/files', $url);
+        $url = str_replace('https://media.baodansinh.vn/thumb_x200x125/files', 'https://media.baodansinh.vn/thumb_x' . trim($width) . 'x' . trim($height) . '/files', $url);
+        $url = str_replace('https://media.baodansinh.vn/files', 'https://media.baodansinh.vn/thumb_x' . trim($width) . 'x' . trim($height) . '/files', $url);
+        return trim($url);
+    }
+
+    public static function externalCdnOptimize($url = '', $width = 345, $height = 200)
+    {
+        $url = trim($url);
+        if (empty($url)) {
+            return $url;
+        }
+        // Xử lý cho vietnamnet, 2sao, vietnambiz, tintuconline
+        $arrayList = [
+            'cdn.vietnambiz.vn',
+            'ttol.vietnamnetjsc.vn',
+            'static-images.vnncdn.net',
+            'static2-images.vnncdn.net',
+        ];
+        $parseUrl = parse_url($url);
+        if (isset($parseUrl['host']) && in_array($parseUrl['host'], $arrayList, true)) {
+            $url = self::urlQueryRemoved($url);
+            $url .= '?width=' . trim($width);
+            return trim($url);
+        }
+        $url = self::externalCdnEPICMSOptimize($url, $width, $height);
+        $url = self::externalCdnVCCorpCMSOptimize($url, $width, $height);
+        $url = self::externalCdnOneCMSOptimize($url, $width, $height);
+        $url = self::externalCdnNetLinkCMSOptimize($url, $width, $height);
+        $url = str_replace('https://static.kinhtedothi.vn/600x315/images', 'https://static.kinhtedothi.vn/640x360/images', $url);
+        $url = str_replace('https://static.kinhtedothi.vn/images', 'https://static.kinhtedothi.vn/640x360/images', $url);
         $url = str_replace('https://cdnmedia.webthethao.vn/thumb/600-315/uploads', 'https://cdnmedia.webthethao.vn/thumb/' . trim($width) . 'x' . trim($height) . '/uploads', $url);
         $url = str_replace('https://cdnmedia.webthethao.vn/uploads', 'https://cdnmedia.webthethao.vn/thumb/' . trim($width) . 'x' . trim($height) . '/uploads', $url);
         $url = str_replace('https://media.bongda.com.vn/resize/1200x627/files', 'https://media.bongda.com.vn/resize/' . trim($width) . 'x' . trim($height) . '/files', $url);
@@ -237,7 +340,7 @@ class ExternalCDNOptimize
         $url = str_replace('https://media.tiepthigiadinh.vn/resize/700x400/files', 'https://media.tiepthigiadinh.vn/resize/' . trim($width) . 'x' . trim($height) . '/files', $url);
         $url = str_replace('https://media.tiepthigiadinh.vn/resize/600x312/files', 'https://media.tiepthigiadinh.vn/resize/' . trim($width) . 'x' . trim($height) . '/files', $url);
         $url = str_replace('https://media.tiepthigiadinh.vn/files', 'https://media.tiepthigiadinh.vn/resize/' . trim($width) . 'x' . trim($height) . '/files', $url);
-
+        // Other
         $url = str_replace('https://news-thumb2.ymgstatic.com/YanThumbNews/', 'https://static2.yan.vn/' . trim($width) . 'x' . trim($height) . '/YanThumbNews/', $url);
         // media.anhp.vn
         $url = str_replace('http://media.anhp.vn:8081/', 'http://media.anhp.vn/', $url);
