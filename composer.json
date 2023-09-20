@@ -1,0 +1,41 @@
+{
+    "type": "library",
+    "name": "smart-bear-cms/external-cdn-url-optimize",
+    "description": "External CDN Optimize - Basic, Simple and Lightweight",
+    "keywords": [
+        "image",
+        "helper",
+        "library",
+        "php"
+    ],
+    "homepage": "https://github.com/smart-bear-cms/external-cdn-url-optimize",
+    "license": "MIT",
+    "minimum-stability": "stable",
+    "authors": [
+        {
+            "name": "Nguyen An Hung",
+            "email": "dev@nguyenanhung.com",
+            "homepage": "https://nguyenanhung.com",
+            "role": "Developer"
+        }
+    ],
+    "require": {
+        "php": ">=5.6",
+        "ext-mbstring": "*"
+    },
+    "suggest": {
+        "ext-curl": "Needed to support cURL",
+        "ext-json": "Needed to support JSON",
+        "ext-mcrypt": "Needed to support mcrypt",
+        "ext-iconv": "Needed to support iconv",
+        "ext-openssl": "Needed to support openssl"
+    },
+    "autoload": {
+        "psr-4": {
+            "nguyenanhung\\Platforms\\SmartBearCMS\\Library\\ExternalCDNOptimize\\": "src/"
+        },
+        "files": [
+            "helpers/helpers.php"
+        ]
+    }
+}
