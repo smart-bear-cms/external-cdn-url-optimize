@@ -152,6 +152,7 @@ class ExternalCDNOptimize
         $url = str_replace('https://autopro8.mediacdn.vn/zoom/600_315/', 'https://autopro8.mediacdn.vn/thumb_w/' . trim($width) . '/', $url);
         $url = str_replace('https://vtv1.mediacdn.vn/zoom/600_315/', 'https://vtv1.mediacdn.vn/thumb_w/' . trim($width) . '/', $url);
         $url = str_replace('https://vtv1.mediacdn.vn/fb_thumb_bn/', 'https://vtv1.mediacdn.vn/thumb_w/' . trim($width) . '/', $url);
+        $url = str_replace('https://toquoc.mediacdn.vn/thumb_w/600/', 'https://toquoc.mediacdn.vn/thumb_w/' . trim($width) . '/', $url);
         $url = str_replace('https://toquoc.mediacdn.vn/zoom/600_315/', 'https://toquoc.mediacdn.vn/thumb_w/' . trim($width) . '/', $url);
         $url = str_replace('https://toquoc.mediacdn.vn/fb_thumb_bn/', 'https://toquoc.mediacdn.vn/thumb_w/' . trim($width) . '/', $url);
         $url = str_replace('https://toquoc.mediacdn.vn/2', 'https://toquoc.mediacdn.vn/thumb_w/' . trim($width) . '/2', $url);
