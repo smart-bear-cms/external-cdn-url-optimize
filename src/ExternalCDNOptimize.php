@@ -319,6 +319,7 @@ class ExternalCDNOptimize
         $url = str_replace('https://static.kinhtedothi.vn/images', 'https://static.kinhtedothi.vn/640x360/images', $url);
         $url = str_replace('https://cdnmedia.webthethao.vn/thumb/600-315/uploads', 'https://cdnmedia.webthethao.vn/thumb/' . trim($width) . 'x' . trim($height) . '/uploads', $url);
         $url = str_replace('https://cdnmedia.webthethao.vn/uploads', 'https://cdnmedia.webthethao.vn/thumb/' . trim($width) . 'x' . trim($height) . '/uploads', $url);
+        // Resize Prefix
         $url = str_replace('https://media.bongda.com.vn/resize/1200x627/files', 'https://media.bongda.com.vn/resize/' . trim($width) . 'x' . trim($height) . '/files', $url);
         $url = str_replace('https://media.bongda.com.vn/resize/1200x630/files', 'https://media.bongda.com.vn/resize/' . trim($width) . 'x' . trim($height) . '/files', $url);
         $url = str_replace('https://media.bongda.com.vn/resize/600x312/files', 'https://media.bongda.com.vn/resize/' . trim($width) . 'x' . trim($height) . '/files', $url);
