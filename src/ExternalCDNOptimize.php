@@ -103,9 +103,10 @@ class ExternalCDNOptimize
             'cdn.vietnambiz.vn',
             'ttol.vietnamnetjsc.vn',
             'static-images.vnncdn.net',
+            'static2-images.vnncdn.net',
         ];
         $parseUrl = parse_url($url);
-        if (isset($parseUrl['host']) && in_array($parseUrl['host'], $arrayList)) {
+        if (isset($parseUrl['host']) && in_array($parseUrl['host'], $arrayList, true)) {
             $url = self::urlQueryRemoved($url);
             $url .= '?width=' . trim($width);
             return trim($url);
@@ -151,11 +152,63 @@ class ExternalCDNOptimize
         $url = str_replace('https://autopro8.mediacdn.vn/zoom/600_315/', 'https://autopro8.mediacdn.vn/thumb_w/' . trim($width) . '/', $url);
         $url = str_replace('https://vtv1.mediacdn.vn/zoom/600_315/', 'https://vtv1.mediacdn.vn/thumb_w/' . trim($width) . '/', $url);
         $url = str_replace('https://vtv1.mediacdn.vn/fb_thumb_bn/', 'https://vtv1.mediacdn.vn/thumb_w/' . trim($width) . '/', $url);
-        // OneCMS
+        // OneCMS CDN
         $url = str_replace('https://vb.1cdn.vn/thumbs/680x425/', 'https://vb.1cdn.vn/thumbs/' . trim($width) . 'x' . trim($height) . '/', $url);
         $url = str_replace('https://vb.1cdn.vn/thumbs/600x315/', 'https://vb.1cdn.vn/thumbs/' . trim($width) . 'x' . trim($height) . '/', $url);
+        $url = str_replace('https://vb.1cdn.vn/thumbs/680x425/', 'https://vb.1cdn.vn/thumbs/' . trim($width) . 'x' . trim($height) . '/', $url);
+        $url = str_replace('https://vb.1cdn.vn/thumbs/600x315/', 'https://vb.1cdn.vn/thumbs/' . trim($width) . 'x' . trim($height) . '/', $url);
+        $url = str_replace('https://vb.1cdn.vn/20', 'https://vb.1cdn.vn/thumbs/' . trim($width) . 'x' . trim($height) . '/20', $url);
         $url = str_replace('https://hgth.1cdn.vn/thumbs/680x425/', 'https://hgth.1cdn.vn/thumbs/' . trim($width) . 'x' . trim($height) . '/', $url);
         $url = str_replace('https://hgth.1cdn.vn/thumbs/600x315/', 'https://hgth.1cdn.vn/thumbs/' . trim($width) . 'x' . trim($height) . '/', $url);
+        $url = str_replace('https://hgth.1cdn.vn/20', 'https://hgth.1cdn.vn/thumbs/' . trim($width) . 'x' . trim($height) . '/20', $url);
+        $url = str_replace('https://hnm.1cdn.vn/thumbs/680x425/', 'https://hnm.1cdn.vn/thumbs/' . trim($width) . 'x' . trim($height) . '/', $url);
+        $url = str_replace('https://hnm.1cdn.vn/thumbs/600x315/', 'https://hnm.1cdn.vn/thumbs/' . trim($width) . 'x' . trim($height) . '/', $url);
+        $url = str_replace('https://hnm.1cdn.vn/20', 'https://hnm.1cdn.vn/thumbs/' . trim($width) . 'x' . trim($height) . '/20', $url);
+        $url = str_replace('https://cly.1cdn.vn/thumbs/680x425/', 'https://cly.1cdn.vn/thumbs/' . trim($width) . 'x' . trim($height) . '/', $url);
+        $url = str_replace('https://cly.1cdn.vn/thumbs/600x315/', 'https://cly.1cdn.vn/thumbs/' . trim($width) . 'x' . trim($height) . '/', $url);
+        $url = str_replace('https://cly.1cdn.vn/20', 'https://cly.1cdn.vn/thumbs/' . trim($width) . 'x' . trim($height) . '/20', $url);
+        $url = str_replace('https://gdtd.1cdn.vn/thumbs/680x425/', 'https://gdtd.1cdn.vn/thumbs/' . trim($width) . 'x' . trim($height) . '/', $url);
+        $url = str_replace('https://gdtd.1cdn.vn/thumbs/600x315/', 'https://gdtd.1cdn.vn/thumbs/' . trim($width) . 'x' . trim($height) . '/', $url);
+        $url = str_replace('https://gdtd.1cdn.vn/20', 'https://gdtd.1cdn.vn/thumbs/' . trim($width) . 'x' . trim($height) . '/20', $url);
+        $url = str_replace('https://btnmt.1cdn.vn/thumbs/680x425/', 'https://btnmt.1cdn.vn/thumbs/' . trim($width) . 'x' . trim($height) . '/', $url);
+        $url = str_replace('https://btnmt.1cdn.vn/thumbs/600x315/', 'https://btnmt.1cdn.vn/thumbs/' . trim($width) . 'x' . trim($height) . '/', $url);
+        $url = str_replace('https://btnmt.1cdn.vn/20', 'https://btnmt.1cdn.vn/thumbs/' . trim($width) . 'x' . trim($height) . '/20', $url);
+        $url = str_replace('https://mtg.1cdn.vn/thumbs/680x425/', 'https://mtg.1cdn.vn/thumbs/' . trim($width) . 'x' . trim($height) . '/', $url);
+        $url = str_replace('https://mtg.1cdn.vn/thumbs/600x315/', 'https://mtg.1cdn.vn/thumbs/' . trim($width) . 'x' . trim($height) . '/', $url);
+        $url = str_replace('https://mtg.1cdn.vn/20', 'https://mtg.1cdn.vn/thumbs/' . trim($width) . 'x' . trim($height) . '/20', $url);
+        $url = str_replace('https://nqs.1cdn.vn/thumbs/680x425/', 'https://nqs.1cdn.vn/thumbs/' . trim($width) . 'x' . trim($height) . '/', $url);
+        $url = str_replace('https://nqs.1cdn.vn/thumbs/600x315/', 'https://nqs.1cdn.vn/thumbs/' . trim($width) . 'x' . trim($height) . '/', $url);
+        $url = str_replace('https://nqs.1cdn.vn/20', 'https://nqs.1cdn.vn/thumbs/' . trim($width) . 'x' . trim($height) . '/20', $url);
+        $url = str_replace('https://dnsg.1cdn.vn/thumbs/680x425/', 'https://dnsg.1cdn.vn/thumbs/' . trim($width) . 'x' . trim($height) . '/', $url);
+        $url = str_replace('https://dnsg.1cdn.vn/thumbs/600x315/', 'https://dnsg.1cdn.vn/thumbs/' . trim($width) . 'x' . trim($height) . '/', $url);
+        $url = str_replace('https://dnsg.1cdn.vn/20', 'https://dnsg.1cdn.vn/thumbs/' . trim($width) . 'x' . trim($height) . '/20', $url);
+        $url = str_replace('https://ictv.1cdn.vn/thumbs/680x425/', 'https://ictv.1cdn.vn/thumbs/' . trim($width) . 'x' . trim($height) . '/', $url);
+        $url = str_replace('https://ictv.1cdn.vn/thumbs/600x315/', 'https://ictv.1cdn.vn/thumbs/' . trim($width) . 'x' . trim($height) . '/', $url);
+        $url = str_replace('https://ictv.1cdn.vn/20', 'https://ictv.1cdn.vn/thumbs/' . trim($width) . 'x' . trim($height) . '/20', $url);
+        $url = str_replace('https://khpt.1cdn.vn/thumbs/680x425/', 'https://khpt.1cdn.vn/thumbs/' . trim($width) . 'x' . trim($height) . '/', $url);
+        $url = str_replace('https://khpt.1cdn.vn/thumbs/600x315/', 'https://khpt.1cdn.vn/thumbs/' . trim($width) . 'x' . trim($height) . '/', $url);
+        $url = str_replace('https://khpt.1cdn.vn/20', 'https://khpt.1cdn.vn/thumbs/' . trim($width) . 'x' . trim($height) . '/20', $url);
+        $url = str_replace('https://kiemsat.1cdn.vn/thumbs/680x425/', 'https://kiemsat.1cdn.vn/thumbs/' . trim($width) . 'x' . trim($height) . '/', $url);
+        $url = str_replace('https://kiemsat.1cdn.vn/thumbs/600x315/', 'https://kiemsat.1cdn.vn/thumbs/' . trim($width) . 'x' . trim($height) . '/', $url);
+        $url = str_replace('https://kiemsat.1cdn.vn/20', 'https://kiemsat.1cdn.vn/thumbs/' . trim($width) . 'x' . trim($height) . '/20', $url);
+        $url = str_replace('https://mkt.1cdn.vn/thumbs/680x425/', 'https://mkt.1cdn.vn/thumbs/' . trim($width) . 'x' . trim($height) . '/', $url);
+        $url = str_replace('https://mkt.1cdn.vn/thumbs/600x315/', 'https://mkt.1cdn.vn/thumbs/' . trim($width) . 'x' . trim($height) . '/', $url);
+        $url = str_replace('https://mkt.1cdn.vn/20', 'https://mkt.1cdn.vn/thumbs/' . trim($width) . 'x' . trim($height) . '/20', $url);
+        $url = str_replace('https://nhn.1cdn.vn/thumbs/680x425/', 'https://nhn.1cdn.vn/thumbs/' . trim($width) . 'x' . trim($height) . '/', $url);
+        $url = str_replace('https://nhn.1cdn.vn/thumbs/600x315/', 'https://nhn.1cdn.vn/thumbs/' . trim($width) . 'x' . trim($height) . '/', $url);
+        $url = str_replace('https://nhn.1cdn.vn/20', 'https://nhn.1cdn.vn/thumbs/' . trim($width) . 'x' . trim($height) . '/20', $url);
+        $url = str_replace('https://tttctt.1cdn.vn/thumbs/680x425/', 'https://tttctt.1cdn.vn/thumbs/' . trim($width) . 'x' . trim($height) . '/', $url);
+        $url = str_replace('https://tttctt.1cdn.vn/thumbs/600x315/', 'https://tttctt.1cdn.vn/thumbs/' . trim($width) . 'x' . trim($height) . '/', $url);
+        $url = str_replace('https://tttctt.1cdn.vn/20', 'https://tttctt.1cdn.vn/thumbs/' . trim($width) . 'x' . trim($height) . '/20', $url);
+        $url = str_replace('https://bhd.1cdn.vn/thumbs/680x425/', 'https://bhd.1cdn.vn/thumbs/' . trim($width) . 'x' . trim($height) . '/', $url);
+        $url = str_replace('https://bhd.1cdn.vn/thumbs/600x315/', 'https://bhd.1cdn.vn/thumbs/' . trim($width) . 'x' . trim($height) . '/', $url);
+        $url = str_replace('https://bhd.1cdn.vn/20', 'https://bhd.1cdn.vn/thumbs/' . trim($width) . 'x' . trim($height) . '/20', $url);
+        $url = str_replace('https://bbt.1cdn.vn/thumbs/680x425/', 'https://bbt.1cdn.vn/thumbs/' . trim($width) . 'x' . trim($height) . '/', $url);
+        $url = str_replace('https://bbt.1cdn.vn/thumbs/600x315/', 'https://bbt.1cdn.vn/thumbs/' . trim($width) . 'x' . trim($height) . '/', $url);
+        $url = str_replace('https://bbt.1cdn.vn/20', 'https://bbt.1cdn.vn/thumbs/' . trim($width) . 'x' . trim($height) . '/20', $url);
+        $url = str_replace('https://daknong.1cdn.vn/thumbs/680x425/', 'https://daknong.1cdn.vn/thumbs/' . trim($width) . 'x' . trim($height) . '/', $url);
+        $url = str_replace('https://daknong.1cdn.vn/thumbs/600x315/', 'https://daknong.1cdn.vn/thumbs/' . trim($width) . 'x' . trim($height) . '/', $url);
+        $url = str_replace('https://daknong.1cdn.vn/20', 'https://daknong.1cdn.vn/thumbs/' . trim($width) . 'x' . trim($height) . '/20', $url);
         // Other Site
         $url = str_replace('https://cdnmedia.webthethao.vn/thumb/600-315/uploads', 'https://cdnmedia.webthethao.vn/thumb/' . trim($width) . 'x' . trim($height) . '/uploads', $url);
         $url = str_replace('https://cdnmedia.webthethao.vn/uploads', 'https://cdnmedia.webthethao.vn/thumb/' . trim($width) . 'x' . trim($height) . '/uploads', $url);
