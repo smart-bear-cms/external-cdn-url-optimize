@@ -115,6 +115,21 @@ class ExternalCDNOptimize
         ];
     }
 
+    public static function externalCdnWorkWithFullUrlQueryResize()
+    {
+        return [
+            'media.thuonghieucongluan.vn',
+        ];
+    }
+
+    public static function externalCdnWorkWithFullUrlQueryResizeReplace($domain = '')
+    {
+        return [
+            trim($domain) . '/resize_600x315/' => trim($domain) . '/image_resize/',
+            trim($domain) . '/resize_640x360/' => trim($domain) . '/image_resize/',
+        ];
+    }
+
     protected static function optimizeOneDomainCdnEPICMSOptimize($domain, $url = '', $width = 345, $height = 200)
     {
         $domain = trim($domain);
@@ -250,8 +265,10 @@ class ExternalCDNOptimize
         $url = self::optimizeOneDomainExternalCdnEXCDNOptimize('https://thumb.phunutoday.vn', $url, $height, $width);
         $url = self::optimizeOneDomainExternalCdnEXCDNOptimize('https://congluan-cdn.congluan.vn', $url, $height, $width);
         $url = self::optimizeOneDomainExternalCdnEXCDNOptimize('https://media.tiepthigiadinh.vn', $url, $height, $width);
+        $url = self::optimizeOneDomainExternalCdnEXCDNOptimize('https://media.phapluatplus.vn', $url, $height, $width);
         $url = self::optimizeOneDomainExternalCdnEXCDNOptimize('https://media.bongda.com.vn', $url, $height, $width);
         $url = self::optimizeOneDomainExternalCdnEXCDNOptimize('https://t.ex-cdn.com/thoidaiplus.suckhoedoisong.vn', $url, $height, $width);
+        $url = self::optimizeOneDomainExternalCdnEXCDNOptimize('https://t.ex-cdn.com/suckhoecongdongonline.vn', $url, $height, $width);
         $url = self::optimizeOneDomainExternalCdnEXCDNOptimize('https://t.ex-cdn.com/giadinhmoi.vn', $url, $height, $width);
         return trim($url);
     }
@@ -281,6 +298,7 @@ class ExternalCDNOptimize
         $domain = trim($domain);
         $url = str_replace(trim($domain) . '/thumbs/680x425/', trim($domain) . '/thumbs/' . trim($width) . 'x' . trim($height) . '/', $url);
         $url = str_replace(trim($domain) . '/thumbs/600x315/', trim($domain) . '/thumbs/' . trim($width) . 'x' . trim($height) . '/', $url);
+        $url = str_replace(trim($domain) . '/uploads', trim($domain) . '/thumbs/' . trim($width) . 'x' . trim($height) . '/uploads', $url);
         $url = str_replace(trim($domain) . '/1', trim($domain) . '/thumbs/' . trim($width) . 'x' . trim($height) . '/1', $url);
         $url = str_replace(trim($domain) . '/2', trim($domain) . '/thumbs/' . trim($width) . 'x' . trim($height) . '/2', $url);
         $url = str_replace(trim($domain) . '/3', trim($domain) . '/thumbs/' . trim($width) . 'x' . trim($height) . '/3', $url);
@@ -318,6 +336,7 @@ class ExternalCDNOptimize
         $url = self::optimizeOneDomainCdnOneCMSOptimize('https://bhd.1cdn.vn', $url, $width, $height);
         $url = self::optimizeOneDomainCdnOneCMSOptimize('https://bbt.1cdn.vn', $url, $width, $height);
         $url = self::optimizeOneDomainCdnOneCMSOptimize('https://daknong.1cdn.vn', $url, $width, $height);
+        $url = self::optimizeOneDomainCdnOneCMSOptimize('https://images.baodantoc.vn', $url, $width, $height);
         return trim($url);
     }
 
@@ -369,10 +388,19 @@ class ExternalCDNOptimize
         }
         // Xử lý cho vietnamnet, 2sao, vietnambiz, tintuconline
         $arrayList = self::externalCdnWorkWithUrlQueryResize();
+        $arrayListFullUrl = self::externalCdnWorkWithFullUrlQueryResize();
         $parseUrl = parse_url($url);
         if (isset($parseUrl['host']) && in_array($parseUrl['host'], $arrayList, true)) {
             $url = self::urlQueryRemoved($url);
             $url .= '?width=' . trim($width);
+            return trim($url);
+        }
+        if (isset($parseUrl['host']) && in_array($parseUrl['host'], $arrayListFullUrl, true)) {
+            $url = self::urlQueryRemoved($url);
+            foreach (self::externalCdnWorkWithFullUrlQueryResizeReplace() as $from => $to) {
+                $url = str_replace($parseUrl['host'] . $from, $parseUrl['host'] . $to, $url);
+            }
+            $url .= '?' . http_build_query(array('width' => $width, 'height' => $height));
             return trim($url);
         }
         $url = self::externalCdnEPICMSOptimize($url, $width, $height);
