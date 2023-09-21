@@ -39,6 +39,7 @@ class ExternalCDNOptimize
                 'http://static.cand.com.vn',
                 'http://streaming1.danviet.vn',
                 'http://media.kinhtedothi.vn',
+                'http://media.thuonghieucongluan.vn',
             ),
             array(
                 'https://cdnphoto.dantri.com.vn',
@@ -53,6 +54,7 @@ class ExternalCDNOptimize
                 'https://static.cand.com.vn',
                 'https://streaming1.danviet.vn',
                 'https://media.kinhtedothi.vn',
+                'https://media.thuonghieucongluan.vn',
             ),
             $url);
         return trim($url);
@@ -417,6 +419,8 @@ class ExternalCDNOptimize
         $url = str_replace('https://img.cand.com.vn/resize/800x800', 'https://img.cand.com.vn/resize/600x600', $url);
         $url = str_replace('https://static.kinhtedothi.vn/600x315/images', 'https://static.kinhtedothi.vn/640x360/images', $url);
         $url = str_replace('https://static.kinhtedothi.vn/images', 'https://static.kinhtedothi.vn/640x360/images', $url);
+        $url = str_replace('https://media.tapchixaydung.vn/resize_x500x/mediav2', 'https://media.tapchixaydung.vn/resize_x' . trim($width) . 'x/mediav2', $url);
+        $url = str_replace('https://media.tapchixaydung.vn/mediav2', 'https://media.tapchixaydung.vn/resize_x' . trim($width) . 'x/mediav2', $url);
         $url = str_replace('https://cdnmedia.webthethao.vn/thumb/600-315/uploads', 'https://cdnmedia.webthethao.vn/thumb/' . trim($width) . 'x' . trim($height) . '/uploads', $url);
         $url = str_replace('https://cdnmedia.webthethao.vn/uploads', 'https://cdnmedia.webthethao.vn/thumb/' . trim($width) . 'x' . trim($height) . '/uploads', $url);
         // Other
