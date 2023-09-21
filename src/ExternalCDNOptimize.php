@@ -137,6 +137,14 @@ class ExternalCDNOptimize
         $url = str_replace('https://media.vov.vn/sites/default/files/styles/og_image/', 'https://media.vov.vn/sites/default/files/styles/front_medium/', $url);
         $url = str_replace('https://media.vov.vn/sites/default/files/styles/front_large/', 'https://media.vov.vn/sites/default/files/styles/front_medium/', $url);
         $url = str_replace('https://media.vov.vn/sites/default/files/styles/front_small/', 'https://media.vov.vn/sites/default/files/styles/front_medium/', $url);
+
+        $url = self::optimizeOneDomainCdnEPICMSOptimize('https://photo-cms-tpo.epicdn.me', $url, $width, $height);
+        $url = self::optimizeOneDomainCdnEPICMSOptimize('https://photo-cms-baophapluat.epicdn.me', $url, $width, $height);
+        $url = self::optimizeOneDomainCdnEPICMSOptimize('https://photo-cms-baodauthau.epicdn.me', $url, $width, $height);
+        $url = self::optimizeOneDomainCdnEPICMSOptimize('https://photo-cms-giaoducthoidai.epicdn.me', $url, $width, $height);
+        $url = self::optimizeOneDomainCdnEPICMSOptimize('https://photo-cms-baonghean.epicdn.me', $url, $width, $height);
+        $url = self::optimizeOneDomainCdnEPICMSOptimize('https://photo-cms-ngaynay.epicdn.me', $url, $width, $height);
+
         $url = self::optimizeOneDomainCdnEPICMSOptimize('https://image.tienphong.vn', $url, $width, $height);
         $url = self::optimizeOneDomainCdnEPICMSOptimize('https://image.ngaynay.vn', $url, $width, $height);
         $url = self::optimizeOneDomainCdnEPICMSOptimize('https://image.nhandan.vn', $url, $width, $height);
@@ -144,6 +152,9 @@ class ExternalCDNOptimize
         $url = self::optimizeOneDomainCdnEPICMSOptimize('https://image.baonghean.vn', $url, $width, $height);
         $url = self::optimizeOneDomainCdnEPICMSOptimize('https://image.baodauthau.vn', $url, $width, $height);
         $url = self::optimizeOneDomainCdnEPICMSOptimize('https://image.baophapluat.vn', $url, $width, $height);
+        $url = self::optimizeOneDomainCdnEPICMSOptimize('https://image.giaoducthoidai.vn', $url, $width, $height);
+        $url = self::optimizeOneDomainCdnEPICMSOptimize('https://image.giacngo.vn', $url, $width, $height);
+        $url = self::optimizeOneDomainCdnEPICMSOptimize('https://image.thuonggiaonline.vn', $url, $width, $height);
         $url = self::optimizeOneDomainCdnEPICMSOptimize('https://image.sggp.org.vn', $url, $width, $height);
         return trim($url);
     }
@@ -210,6 +221,8 @@ class ExternalCDNOptimize
         $url = str_replace('https://baogiaothong.mediacdn.vn/upload', 'https://baogiaothong.mediacdn.vn/thumb_w/' . trim($width) . '/upload', $url);
         $url = str_replace('https://suckhoedoisong.qltns.mediacdn.vn/zoom/600_315/', 'https://suckhoedoisong.qltns.mediacdn.vn/thumb_w/' . trim($width) . '/', $url);
         $url = str_replace('https://suckhoedoisong.qltns.mediacdn.vn/3', 'https://suckhoedoisong.qltns.mediacdn.vn/thumb_w/' . trim($width) . '/3', $url);
+        $url = str_replace('https://tapchigiaothong.qltns.mediacdn.vn/zoom/600_315/', 'https://tapchigiaothong.qltns.mediacdn.vn/thumb_w/' . trim($width) . '/', $url);
+        $url = str_replace('https://tapchigiaothong.qltns.mediacdn.vn/tapchigiaothong', 'https://tapchigiaothong.qltns.mediacdn.vn/thumb_w/' . trim($width) . '/tapchigiaothong', $url);
         $url = str_replace('https://phapluatbandoc.mediacdn.vn/zoom/600_315/', 'https://phapluatbandoc.mediacdn.vn/thumb_w/' . trim($width) . '/', $url);
         $url = str_replace('https://phapluatbandoc.mediacdn.vn/2', 'https://phapluatbandoc.mediacdn.vn/thumb_w/' . trim($width) . '/2', $url);
         $url = str_replace('https://giadinh.mediacdn.vn/zoom/600_315/', 'https://giadinh.mediacdn.vn/thumb_w/' . trim($width) . '/', $url);
