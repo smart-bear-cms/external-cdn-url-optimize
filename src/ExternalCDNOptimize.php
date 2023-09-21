@@ -427,7 +427,7 @@ class ExternalCDNOptimize
         $url = str_replace('https://news-thumb2.ymgstatic.com/YanThumbNews/', 'https://static2.yan.vn/' . trim($width) . 'x' . trim($height) . '/YanThumbNews/', $url);
         // media.anhp.vn
         $url = str_replace('http://media.anhp.vn:8081/', 'http://media.anhp.vn/', $url);
-
+        $url = str_replace('http://baohaiphong.com.vn/', 'https://baohaiphong.com.vn/', $url);
         return trim($url);
     }
 }
