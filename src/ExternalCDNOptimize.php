@@ -119,6 +119,7 @@ class ExternalCDNOptimize
     {
         return [
             'media.thuonghieucongluan.vn',
+            'media.doanhnghiepvn.vn',
         ];
     }
 
@@ -267,8 +268,10 @@ class ExternalCDNOptimize
         $url = self::optimizeOneDomainExternalCdnEXCDNOptimize('https://media.tiepthigiadinh.vn', $url, $height, $width);
         $url = self::optimizeOneDomainExternalCdnEXCDNOptimize('https://media.phapluatplus.vn', $url, $height, $width);
         $url = self::optimizeOneDomainExternalCdnEXCDNOptimize('https://media.bongda.com.vn', $url, $height, $width);
+        $url = self::optimizeOneDomainExternalCdnEXCDNOptimize('https://media.phunumoi.net.vn', $url, $height, $width);
         $url = self::optimizeOneDomainExternalCdnEXCDNOptimize('https://t.ex-cdn.com/thoidaiplus.suckhoedoisong.vn', $url, $height, $width);
         $url = self::optimizeOneDomainExternalCdnEXCDNOptimize('https://t.ex-cdn.com/suckhoecongdongonline.vn', $url, $height, $width);
+        $url = self::optimizeOneDomainExternalCdnEXCDNOptimize('https://t.ex-cdn.com/nhadautu.vn', $url, $height, $width);
         $url = self::optimizeOneDomainExternalCdnEXCDNOptimize('https://t.ex-cdn.com/giadinhmoi.vn', $url, $height, $width);
         return trim($url);
     }
@@ -299,6 +302,7 @@ class ExternalCDNOptimize
         $url = str_replace(trim($domain) . '/thumbs/680x425/', trim($domain) . '/thumbs/' . trim($width) . 'x' . trim($height) . '/', $url);
         $url = str_replace(trim($domain) . '/thumbs/600x315/', trim($domain) . '/thumbs/' . trim($width) . 'x' . trim($height) . '/', $url);
         $url = str_replace(trim($domain) . '/uploads', trim($domain) . '/thumbs/' . trim($width) . 'x' . trim($height) . '/uploads', $url);
+        $url = str_replace(trim($domain) . '/upload', trim($domain) . '/thumbs/' . trim($width) . 'x' . trim($height) . '/upload', $url);
         $url = str_replace(trim($domain) . '/1', trim($domain) . '/thumbs/' . trim($width) . 'x' . trim($height) . '/1', $url);
         $url = str_replace(trim($domain) . '/2', trim($domain) . '/thumbs/' . trim($width) . 'x' . trim($height) . '/2', $url);
         $url = str_replace(trim($domain) . '/3', trim($domain) . '/thumbs/' . trim($width) . 'x' . trim($height) . '/3', $url);
@@ -337,6 +341,7 @@ class ExternalCDNOptimize
         $url = self::optimizeOneDomainCdnOneCMSOptimize('https://bbt.1cdn.vn', $url, $width, $height);
         $url = self::optimizeOneDomainCdnOneCMSOptimize('https://daknong.1cdn.vn', $url, $width, $height);
         $url = self::optimizeOneDomainCdnOneCMSOptimize('https://images.baodantoc.vn', $url, $width, $height);
+        $url = self::optimizeOneDomainCdnOneCMSOptimize('https://image.theleader.vn', $url, $width, $height);
         return trim($url);
     }
 
@@ -400,7 +405,7 @@ class ExternalCDNOptimize
             foreach (self::externalCdnWorkWithFullUrlQueryResizeReplace() as $from => $to) {
                 $url = str_replace($parseUrl['host'] . $from, $parseUrl['host'] . $to, $url);
             }
-            $url .= '?' . http_build_query(array('width' => $width, 'height' => $height));
+            $url .= '?' . http_build_query(array('width' => $width, 'height' => $height, 'mode' => 'crop'));
             return trim($url);
         }
         $url = self::externalCdnEPICMSOptimize($url, $width, $height);
