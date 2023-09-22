@@ -112,6 +112,7 @@ class ExternalCDNOptimize
         return [
             'cdn.vietnambiz.vn',
             'cdn.vietnammoi.vn',
+            '2sao.vietnamnetjsc.vn',
             'ttol.vietnamnetjsc.vn',
             'static-images.vnncdn.net',
             'static2-images.vnncdn.net',
