@@ -105,7 +105,7 @@ class ExternalCDNOptimize
         if (!isset($parse['host'])) {
             return $url;
         }
-        if (!isset($parse['scheme'])) {
+        if (!isset($parse['scheme']) && !empty($protocol)) {
             return trim($protocol) . ':' . $url;
         }
 
