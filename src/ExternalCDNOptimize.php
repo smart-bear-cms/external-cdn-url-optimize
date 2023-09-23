@@ -350,6 +350,24 @@ class ExternalCDNOptimize
         return trim($url);
     }
 
+    public static function externalCdnHostnameIsOfOneCMS($hostname = '')
+    {
+        $hostname = trim($hostname);
+        if (empty($hostname)) {
+            return false;
+        }
+        $hostLength = strlen($hostname);
+        $oneCmsCdn = '1cdn.vn';
+        $oneCmsCdnLength = strlen($oneCmsCdn);
+        $startCheck = $hostLength - $oneCmsCdnLength;
+        $domain = substr($hostname, $startCheck, $hostLength);
+        $endDomain = trim($domain);
+        if ($endDomain === $oneCmsCdn) {
+            return true;
+        }
+        return false;
+    }
+
     public static function externalCdnIsOfOneCMS($url = '')
     {
         $url = trim($url);
@@ -360,27 +378,23 @@ class ExternalCDNOptimize
         if (!isset($parseUrl['host'])) {
             return false;
         }
-        $urlHostname = $parseUrl['host'];
-        $hostLength = strlen($urlHostname);
-        $oneCmsCdn = '1cdn.vn';
-        $oneCmsCdnLength = strlen($oneCmsCdn);
-        $startCheck = $hostLength - $oneCmsCdnLength;
-        $domain = substr($urlHostname, $startCheck, $hostLength);
-        $endDomain = trim($domain);
-        if ($endDomain === $oneCmsCdn) {
-            return true;
-        }
-        return false;
+        return self::externalCdnHostnameIsOfOneCMS($parseUrl['host']);
     }
 
-    public static function externalCdnOneCMSFixedImageSrcThumbnail($url = '')
+    public static function externalCdnOneCMSQuickFixedImageSrcThumbnail($url = '')
     {
         $url = trim($url);
         $fact = self::externalCdnIsOfOneCMS($url);
         if ($fact === true) {
-            $url = trim(str_replace('thumbs/600x315/', 'thumbs/650x360/', $url));
+            return self::externalCdnOneCMSFixedImageSrcThumbnail($url);
         }
         return $url;
+    }
+
+    public static function externalCdnOneCMSFixedImageSrcThumbnail($url = '')
+    {
+        $url = trim(str_replace('thumbs/600x315/', 'thumbs/650x360/', $url));
+        return trim($url);
     }
 
     public static function externalCdnOneCMSOptimize($url = '', $width = 345, $height = 200)

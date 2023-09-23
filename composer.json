@@ -35,7 +35,10 @@
             "nguyenanhung\\Platforms\\SmartBearCMS\\Library\\ExternalCDNOptimize\\": "src/"
         },
         "files": [
-            "helpers/helpers.php"
+            "helpers/helpers.php",
+            "helpers/optimize.php",
+            "helpers/onecms.php",
+            "helpers/drupalcms.php"
         ]
     }
 }
