@@ -16,7 +16,8 @@ if (!function_exists('smart_bear_cms_cdn_url_query_removed')) {
     {
         return \nguyenanhung\Platforms\SmartBearCMS\Library\ExternalCDNOptimize\ExternalCDNOptimize::urlQueryRemoved($url);
     }
-}if (!function_exists('smart_bear_cms_cdn_add_url_schema')) {
+}
+if (!function_exists('smart_bear_cms_cdn_add_url_schema')) {
     function smart_bear_cms_cdn_add_url_schema($url = '', $protocol = 'https')
     {
         return \nguyenanhung\Platforms\SmartBearCMS\Library\ExternalCDNOptimize\ExternalCDNOptimize::urlPushSchemaProtocol($url, $protocol);
@@ -56,6 +57,18 @@ if (!function_exists('smart_bear_cms_external_cdn_url_optimize_ex_cdn_com')) {
     function smart_bear_cms_external_cdn_url_optimize_ex_cdn_com($url = '', $width = 345, $height = 200)
     {
         return \nguyenanhung\Platforms\SmartBearCMS\Library\ExternalCDNOptimize\ExternalCDNOptimize::externalCdnEXCDNOptimize($url, $width, $height);
+    }
+}
+if (!function_exists('smart_bear_cms_external_cdn_url_is_of_one_cms')) {
+    function smart_bear_cms_external_cdn_url_is_of_one_cms($url = '')
+    {
+        return \nguyenanhung\Platforms\SmartBearCMS\Library\ExternalCDNOptimize\ExternalCDNOptimize::externalCdnIsOfOneCMS($url);
+    }
+}
+if (!function_exists('smart_bear_cms_external_cdn_url_one_cms_thumb_fixed')) {
+    function smart_bear_cms_external_cdn_url_one_cms_thumb_fixed($url = '', $width = 345, $height = 200)
+    {
+        return \nguyenanhung\Platforms\SmartBearCMS\Library\ExternalCDNOptimize\ExternalCDNOptimize::externalCdnOneCMSFixedImageSrcThumbnail($url);
     }
 }
 if (!function_exists('smart_bear_cms_external_cdn_url_optimize_one_cms')) {

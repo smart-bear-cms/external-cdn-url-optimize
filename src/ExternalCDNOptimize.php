@@ -125,6 +125,7 @@ class ExternalCDNOptimize
         return trim($url);
     }
 
+
     public static function externalCdnWorkWithUrlQueryResize()
     {
         return [
@@ -335,6 +336,39 @@ class ExternalCDNOptimize
         $url = str_replace(trim($domain) . '/8', trim($domain) . '/thumbs/' . trim($width) . 'x' . trim($height) . '/8', $url);
         $url = str_replace(trim($domain) . '/9', trim($domain) . '/thumbs/' . trim($width) . 'x' . trim($height) . '/9', $url);
         return trim($url);
+    }
+
+    public static function externalCdnIsOfOneCMS($url = '')
+    {
+        $url = trim($url);
+        if (empty($url)) {
+            return false;
+        }
+        $parseUrl = parse_url($url);
+        if (!isset($parseUrl['host'])) {
+            return false;
+        }
+        $urlHostname = $parseUrl['host'];
+        $hostLength = strlen($urlHostname);
+        $oneCmsCdn = '1cdn.vn';
+        $oneCmsCdnLength = strlen($oneCmsCdn);
+        $startCheck = $hostLength - $oneCmsCdnLength;
+        $domain = substr($urlHostname, $startCheck, $hostLength);
+        $endDomain = trim($domain);
+        if ($endDomain === $oneCmsCdn) {
+            return true;
+        }
+        return false;
+    }
+
+    public static function externalCdnOneCMSFixedImageSrcThumbnail($url = '')
+    {
+        $url = trim($url);
+        $fact = self::externalCdnIsOfOneCMS($url);
+        if ($fact === true) {
+            $url = trim(str_replace('thumbs/600x315/', 'thumbs/650x360/', $url));
+        }
+        return $url;
     }
 
     public static function externalCdnOneCMSOptimize($url = '', $width = 345, $height = 200)
