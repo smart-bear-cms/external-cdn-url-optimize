@@ -16,6 +16,11 @@ if (!function_exists('smart_bear_cms_cdn_url_query_removed')) {
     {
         return \nguyenanhung\Platforms\SmartBearCMS\Library\ExternalCDNOptimize\ExternalCDNOptimize::urlQueryRemoved($url);
     }
+}if (!function_exists('smart_bear_cms_cdn_add_url_schema')) {
+    function smart_bear_cms_cdn_add_url_schema($url = '', $protocol = 'https')
+    {
+        return \nguyenanhung\Platforms\SmartBearCMS\Library\ExternalCDNOptimize\ExternalCDNOptimize::urlPushSchemaProtocol($url, $protocol);
+    }
 }
 if (!function_exists('smart_bear_cms_external_cdn_work_with_query_resize_list')) {
     function smart_bear_cms_external_cdn_work_with_query_resize_list($url = '', $default = 'front_small')

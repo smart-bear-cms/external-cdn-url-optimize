@@ -94,6 +94,24 @@ class ExternalCDNOptimize
         return trim($url);
     }
 
+    public static function urlPushSchemaProtocol($url = '', $protocol = 'https')
+    {
+        $url = trim($url);
+        if (empty($url)) {
+            return $url;
+        }
+
+        $parse = parse_url($url);
+        if (!isset($parse['host'])) {
+            return $url;
+        }
+        if (!isset($parse['scheme'])) {
+            return trim($protocol) . ':' . $url;
+        }
+
+        return $url;
+    }
+
     public static function externalVovCdnResize($url = '', $default = 'front_small')
     {
         $url = trim($url);
