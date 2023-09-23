@@ -125,6 +125,18 @@ class ExternalCDNOptimize
         return trim($url);
     }
 
+    public static function externalVovCdnResizeThumbnailFixed($url = '', $smallWidth = 500)
+    {
+        $url = trim($url);
+        if (empty($url)) {
+            return $url;
+        }
+        $parseUrl = parse_url($url);
+        if ((isset($parseUrl['host']) && $parseUrl['host'] === 'media.vov.vn') && $smallWidth < 500) {
+            return self::externalVovCdnResize($url);
+        }
+        return $url;
+    }
 
     public static function externalCdnWorkWithUrlQueryResize()
     {
