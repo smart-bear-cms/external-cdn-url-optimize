@@ -66,7 +66,7 @@ if (!function_exists('smart_bear_cms_external_cdn_url_is_of_one_cms')) {
     }
 }
 if (!function_exists('smart_bear_cms_external_cdn_url_one_cms_thumb_fixed')) {
-    function smart_bear_cms_external_cdn_url_one_cms_thumb_fixed($url = '', $width = 345, $height = 200)
+    function smart_bear_cms_external_cdn_url_one_cms_thumb_fixed($url = '')
     {
         return \nguyenanhung\Platforms\SmartBearCMS\Library\ExternalCDNOptimize\ExternalCDNOptimize::externalCdnOneCMSFixedImageSrcThumbnail($url);
     }
