@@ -147,6 +147,7 @@ class ExternalCDNOptimize
             'ttol.vietnamnetjsc.vn',
             'static-images.vnncdn.net',
             'static2-images.vnncdn.net',
+            'file.baothuathienhue.vn'
         ];
     }
 
