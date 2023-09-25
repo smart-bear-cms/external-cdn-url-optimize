@@ -72,7 +72,8 @@ class ExternalCDNOptimize
                 '//vov-media.emitech.vn/'
             ),
             array(
-                '//cdn.eva.vn/', '//media.vov.vn/'
+                '//cdn.eva.vn/',
+                '//media.vov.vn/'
             ),
             $url
         );
@@ -147,6 +148,7 @@ class ExternalCDNOptimize
             'ttol.vietnamnetjsc.vn',
             'static-images.vnncdn.net',
             'static2-images.vnncdn.net',
+            'media-cdn-v2.laodong.vn',
             'file.baothuathienhue.vn'
         ];
     }
