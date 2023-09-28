@@ -400,6 +400,31 @@ class ExternalCDNOptimize
         return trim($url);
     }
 
+    public static function externalListCdnOfOneCMS()
+    {
+        return array(
+            'vb.1cdn.vn',
+            'hgth.1cdn.vn',
+            'hnm.1cdn.vn',
+            'cly.1cdn.vn',
+            'gdtd.1cdn.vn',
+            'btnmt.1cdn.vn',
+            'mtg.1cdn.vn',
+            'nqs.1cdn.vn',
+            'dnsg.1cdn.vn',
+            'ictv.1cdn.vn',
+            'khpt.1cdn.vn',
+            'kiemsat.1cdn.vn',
+            'mkt.1cdn.vn',
+            'nhn.1cdn.vn',
+            'tttctt.1cdn.vn',
+            'bhd.1cdn.vn',
+            'bbt.1cdn.vn',
+            'daknong.1cdn.vn'
+        );
+
+    }
+
     public static function externalCdnOneCMSOptimize($url = '', $width = 345, $height = 200)
     {
         $url = trim($url);
