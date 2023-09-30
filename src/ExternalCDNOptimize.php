@@ -66,12 +66,6 @@ class ExternalCDNOptimize
         if (empty($url)) {
             return $url;
         }
-
-//        $url = self::optimizeOneDomainExternalCdnEXCDNOptimize('https://t.ex-cdn.com/thoidaiplus.suckhoedoisong.vn', $url, $height, $width);
-//        $url = self::optimizeOneDomainExternalCdnEXCDNOptimize('https://t.ex-cdn.com/suckhoecongdongonline.vn', $url, $height, $width);
-//        $url = self::optimizeOneDomainExternalCdnEXCDNOptimize('https://t.ex-cdn.com/nhadautu.vn', $url, $height, $width);
-//        $url = self::optimizeOneDomainExternalCdnEXCDNOptimize('https://t.ex-cdn.com/giadinhmoi.vn', $url, $height, $width);
-
         $url = str_replace(
             array(
                 '//image-us.eva.vn/',
@@ -80,6 +74,7 @@ class ExternalCDNOptimize
                 't.ex-cdn.com/thoidaiplus.suckhoedoisong.vn/files/',
                 't.ex-cdn.com/nhadautu.vn/files/',
                 't.ex-cdn.com/giadinhmoi.vn/files/',
+                't.ex-cdn.com/giadinhonline.vn/files/',
             ),
             array(
                 '//cdn.eva.vn/',
@@ -88,6 +83,7 @@ class ExternalCDNOptimize
                 'i.ex-cdn.com/thoidaiplus.suckhoedoisong.vn/files/',
                 'i.ex-cdn.com/nhadautu.vn/files/',
                 'i.ex-cdn.com/giadinhmoi.vn/files/',
+                'i.ex-cdn.com/giadinhonline.vn/files/',
             ),
             $url
         );
@@ -325,6 +321,7 @@ class ExternalCDNOptimize
         $url = self::optimizeOneDomainExternalCdnEXCDNOptimize('https://t.ex-cdn.com/suckhoecongdongonline.vn', $url, $height, $width);
         $url = self::optimizeOneDomainExternalCdnEXCDNOptimize('https://t.ex-cdn.com/nhadautu.vn', $url, $height, $width);
         $url = self::optimizeOneDomainExternalCdnEXCDNOptimize('https://t.ex-cdn.com/giadinhmoi.vn', $url, $height, $width);
+        $url = self::optimizeOneDomainExternalCdnEXCDNOptimize('https://t.ex-cdn.com/giadinhonline.vn', $url, $height, $width);
         return trim($url);
     }
 
