@@ -66,14 +66,28 @@ class ExternalCDNOptimize
         if (empty($url)) {
             return $url;
         }
+
+//        $url = self::optimizeOneDomainExternalCdnEXCDNOptimize('https://t.ex-cdn.com/thoidaiplus.suckhoedoisong.vn', $url, $height, $width);
+//        $url = self::optimizeOneDomainExternalCdnEXCDNOptimize('https://t.ex-cdn.com/suckhoecongdongonline.vn', $url, $height, $width);
+//        $url = self::optimizeOneDomainExternalCdnEXCDNOptimize('https://t.ex-cdn.com/nhadautu.vn', $url, $height, $width);
+//        $url = self::optimizeOneDomainExternalCdnEXCDNOptimize('https://t.ex-cdn.com/giadinhmoi.vn', $url, $height, $width);
+
         $url = str_replace(
             array(
                 '//image-us.eva.vn/',
-                '//vov-media.emitech.vn/'
+                '//vov-media.emitech.vn/',
+                't.ex-cdn.com/suckhoecongdongonline.vn/files/',
+                't.ex-cdn.com/thoidaiplus.suckhoedoisong.vn/files/',
+                't.ex-cdn.com/nhadautu.vn/files/',
+                't.ex-cdn.com/giadinhmoi.vn/files/',
             ),
             array(
                 '//cdn.eva.vn/',
-                '//media.vov.vn/'
+                '//media.vov.vn/',
+                'i.ex-cdn.com/suckhoecongdongonline.vn/files/',
+                'i.ex-cdn.com/thoidaiplus.suckhoedoisong.vn/files/',
+                'i.ex-cdn.com/nhadautu.vn/files/',
+                'i.ex-cdn.com/giadinhmoi.vn/files/',
             ),
             $url
         );
