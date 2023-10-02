@@ -202,6 +202,8 @@ class ExternalCDNOptimize
         $url = str_replace('https://media.vov.vn/sites/default/files/styles/front_large/', 'https://media.vov.vn/sites/default/files/styles/front_medium/', $url);
         $url = str_replace('https://media.vov.vn/sites/default/files/styles/front_small/', 'https://media.vov.vn/sites/default/files/styles/front_medium/', $url);
 
+        $url = self::optimizeOneDomainCdnEPICMSOptimize('https://photo-baomoi.bmcdn.me', $url, $width, $height);
+        $url = self::optimizeOneDomainCdnEPICMSOptimize('https://baomoi-photo-fbcrawler.bmcdn.me', $url, $width, $height);
         $url = self::optimizeOneDomainCdnEPICMSOptimize('https://photo-cms-tpo.epicdn.me', $url, $width, $height);
         $url = self::optimizeOneDomainCdnEPICMSOptimize('https://photo-cms-baophapluat.epicdn.me', $url, $width, $height);
         $url = self::optimizeOneDomainCdnEPICMSOptimize('https://photo-cms-baodauthau.epicdn.me', $url, $width, $height);
@@ -209,8 +211,6 @@ class ExternalCDNOptimize
         $url = self::optimizeOneDomainCdnEPICMSOptimize('https://photo-cms-baonghean.epicdn.me', $url, $width, $height);
         $url = self::optimizeOneDomainCdnEPICMSOptimize('https://photo-cms-ngaynay.epicdn.me', $url, $width, $height);
         $url = self::optimizeOneDomainCdnEPICMSOptimize('https://photo-mekongasean.epicdn.me', $url, $width, $height);
-        $url = self::optimizeOneDomainCdnEPICMSOptimize('https://photo-baomoi.bmcdn.me', $url, $width, $height);
-        $url = self::optimizeOneDomainCdnEPICMSOptimize('https://baomoi-photo-fbcrawler.bmcdn.me', $url, $width, $height);
 
         $url = self::optimizeOneDomainCdnEPICMSOptimize('https://image.mekongasean.vn', $url, $width, $height);
         $url = self::optimizeOneDomainCdnEPICMSOptimize('https://image.plo.vn', $url, $width, $height);
