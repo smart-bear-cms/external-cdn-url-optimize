@@ -561,6 +561,16 @@ class ExternalCDNOptimize
         $url = self::externalCdnNetLinkCMSOptimize($url, $width, $height);
         $url = self::externalCdnEXCDNOptimize($url, $width, $height);
         $url = self::externalCdnYeahOneGroupCDNOptimize($url, $width, $height);
+        $url = self::externalCdnThumbPrefix($url, $width, $height);
+        return trim($url);
+    }
+
+    public static function externalCdnThumbPrefix($url = '', $width = 345, $height = 200)
+    {
+        $url = trim($url);
+        if (empty($url)) {
+            return $url;
+        }
         $url = str_replace('https://img.cand.com.vn/resize/800x800', 'https://img.cand.com.vn/resize/600x600', $url);
         $url = str_replace('https://static.kinhtedothi.vn/600x315/images', 'https://static.kinhtedothi.vn/640x360/images', $url);
         $url = str_replace('https://static.kinhtedothi.vn/images', 'https://static.kinhtedothi.vn/640x360/images', $url);
