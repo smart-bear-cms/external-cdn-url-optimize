@@ -208,12 +208,16 @@ class ExternalCDNOptimize
         $url = self::optimizeOneDomainCdnEPICMSOptimize('https://photo-cms-giaoducthoidai.epicdn.me', $url, $width, $height);
         $url = self::optimizeOneDomainCdnEPICMSOptimize('https://photo-cms-baonghean.epicdn.me', $url, $width, $height);
         $url = self::optimizeOneDomainCdnEPICMSOptimize('https://photo-cms-ngaynay.epicdn.me', $url, $width, $height);
+        $url = self::optimizeOneDomainCdnEPICMSOptimize('https://photo-baomoi.bmcdn.me', $url, $width, $height);
+        $url = self::optimizeOneDomainCdnEPICMSOptimize('https://baomoi-photo-fbcrawler.bmcdn.me', $url, $width, $height);
 
         $url = self::optimizeOneDomainCdnEPICMSOptimize('https://image.tienphong.vn', $url, $width, $height);
         $url = self::optimizeOneDomainCdnEPICMSOptimize('https://image.ngaynay.vn', $url, $width, $height);
         $url = self::optimizeOneDomainCdnEPICMSOptimize('https://image.nhandan.vn', $url, $width, $height);
         $url = self::optimizeOneDomainCdnEPICMSOptimize('https://image.baolaocai.vn', $url, $width, $height);
         $url = self::optimizeOneDomainCdnEPICMSOptimize('https://image.baonghean.vn', $url, $width, $height);
+        $url = self::optimizeOneDomainCdnEPICMSOptimize('https://image.baogialai.com.vn', $url, $width, $height);
+        $url = self::optimizeOneDomainCdnEPICMSOptimize('https://image.baobackan.com.vn', $url, $width, $height);
         $url = self::optimizeOneDomainCdnEPICMSOptimize('https://image.baodauthau.vn', $url, $width, $height);
         $url = self::optimizeOneDomainCdnEPICMSOptimize('https://image.baophapluat.vn', $url, $width, $height);
         $url = self::optimizeOneDomainCdnEPICMSOptimize('https://image.giaoducthoidai.vn', $url, $width, $height);
