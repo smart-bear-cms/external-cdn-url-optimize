@@ -40,6 +40,9 @@ class ExternalCDNOptimize
                 'http://streaming1.danviet.vn',
                 'http://media.kinhtedothi.vn',
                 'http://media.thuonghieucongluan.vn',
+                'http://image.congan.com.vn',
+                'http://cloud.tienlenquyetthang.com',
+                'https://cloud.tienlenquyetthang.com',
             ),
             array(
                 'https://cdnphoto.dantri.com.vn',
@@ -55,6 +58,9 @@ class ExternalCDNOptimize
                 'https://streaming1.danviet.vn',
                 'https://media.kinhtedothi.vn',
                 'https://media.thuonghieucongluan.vn',
+                'https://image.congan.com.vn',
+                'https://image.congan.com.vn',
+                'https://image.congan.com.vn',
             ),
             $url);
         return trim($url);
