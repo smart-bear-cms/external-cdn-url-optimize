@@ -212,7 +212,10 @@ class ExternalCDNOptimize
         $url = self::optimizeOneDomainCdnEPICMSOptimize('https://photo-cms-baolaocai.epicdn.me', $url, $width, $height);
         $url = self::optimizeOneDomainCdnEPICMSOptimize('https://photo-cms-baogialai.epicdn.me', $url, $width, $height);
         $url = self::optimizeOneDomainCdnEPICMSOptimize('https://photo-cms-baobackan.epicdn.me', $url, $width, $height);
+        $url = self::optimizeOneDomainCdnEPICMSOptimize('https://photo-cms-nhandan.epicdn.me', $url, $width, $height);
+        $url = self::optimizeOneDomainCdnEPICMSOptimize('https://photo-cms-giacngo.epicdn.me', $url, $width, $height);
         $url = self::optimizeOneDomainCdnEPICMSOptimize('https://photo-cms-ngaynay.epicdn.me', $url, $width, $height);
+        $url = self::optimizeOneDomainCdnEPICMSOptimize('https://photo-cms-sggp.epicdn.me', $url, $width, $height);
         $url = self::optimizeOneDomainCdnEPICMSOptimize('https://photo-mekongasean.epicdn.me', $url, $width, $height);
         $url = self::optimizeOneDomainCdnEPICMSOptimize('https://photo-cms-bizlive.epicdn.me', $url, $width, $height);
 
