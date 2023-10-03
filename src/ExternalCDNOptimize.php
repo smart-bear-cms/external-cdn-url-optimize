@@ -577,6 +577,9 @@ class ExternalCDNOptimize
         if (empty($url)) {
             return $url;
         }
+        // media.anhp.vn
+        $url = str_replace('http://media.anhp.vn:8081/', 'http://media.anhp.vn/', $url);
+        $url = str_replace('http://baohaiphong.com.vn/', 'https://baohaiphong.com.vn/', $url);
         $url = str_replace('https://img.cand.com.vn/resize/800x800', 'https://img.cand.com.vn/resize/600x600', $url);
         $url = str_replace('https://static.kinhtedothi.vn/600x315/images', 'https://static.kinhtedothi.vn/640x360/images', $url);
         $url = str_replace('https://static.kinhtedothi.vn/images', 'https://static.kinhtedothi.vn/640x360/images', $url);
@@ -586,9 +589,6 @@ class ExternalCDNOptimize
         $url = str_replace('https://cdnmedia.webthethao.vn/uploads', 'https://cdnmedia.webthethao.vn/thumb/' . trim($width) . 'x' . trim($height) . '/uploads', $url);
         // Other
         $url = str_replace('https://news-thumb2.ymgstatic.com/YanThumbNews/', 'https://static2.yan.vn/' . trim($width) . 'x' . trim($height) . '/YanThumbNews/', $url);
-        // media.anhp.vn
-        $url = str_replace('http://media.anhp.vn:8081/', 'http://media.anhp.vn/', $url);
-        $url = str_replace('http://baohaiphong.com.vn/', 'https://baohaiphong.com.vn/', $url);
         return trim($url);
     }
 }
