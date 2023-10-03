@@ -162,6 +162,7 @@ class ExternalCDNOptimize
     public static function externalCdnWorkWithUrlQueryResize()
     {
         return [
+            'images.baoquangnam.vn',
             'cdn.vietnambiz.vn',
             'cdn.vietnammoi.vn',
             '2sao.vietnamnetjsc.vn',
@@ -176,6 +177,7 @@ class ExternalCDNOptimize
     public static function externalCdnWorkWithFullUrlQueryResize()
     {
         return [
+            'images.baoquangnam.vn',
             'media.thuonghieucongluan.vn',
             'media.doanhnghiepvn.vn',
         ];
