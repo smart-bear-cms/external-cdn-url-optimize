@@ -43,6 +43,7 @@ class ExternalCDNOptimize
                 'http://image.congan.com.vn',
                 'http://cloud.tienlenquyetthang.com',
                 'https://cloud.tienlenquyetthang.com',
+                'http://images.baoninhthuan.com.vn',
             ),
             array(
                 'https://cdnphoto.dantri.com.vn',
@@ -61,6 +62,7 @@ class ExternalCDNOptimize
                 'https://image.congan.com.vn',
                 'https://image.congan.com.vn',
                 'https://image.congan.com.vn',
+                'https://images.baoninhthuan.com.vn',
             ),
             $url);
         return trim($url);
