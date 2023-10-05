@@ -84,6 +84,7 @@ class ExternalCDNOptimize
                 't.ex-cdn.com/thoidaiplus.suckhoedoisong.vn/files/',
                 't.ex-cdn.com/nhadautu.vn/files/',
                 't.ex-cdn.com/giadinhmoi.vn/files/',
+                't.ex-cdn.com/nongnghiep.vn/files/',
                 't.ex-cdn.com/giadinhonline.vn/files/',
             ),
             array(
@@ -93,6 +94,7 @@ class ExternalCDNOptimize
                 'i.ex-cdn.com/thoidaiplus.suckhoedoisong.vn/files/',
                 'i.ex-cdn.com/nhadautu.vn/files/',
                 'i.ex-cdn.com/giadinhmoi.vn/files/',
+                'i.ex-cdn.com/nongnghiep.vn/files/',
                 'i.ex-cdn.com/giadinhonline.vn/files/',
             ),
             $url
@@ -355,6 +357,7 @@ class ExternalCDNOptimize
         $url = self::optimizeOneDomainExternalCdnEXCDNOptimize('https://t.ex-cdn.com/nhadautu.vn', $url, $height, $width);
         $url = self::optimizeOneDomainExternalCdnEXCDNOptimize('https://t.ex-cdn.com/giadinhmoi.vn', $url, $height, $width);
         $url = self::optimizeOneDomainExternalCdnEXCDNOptimize('https://t.ex-cdn.com/giadinhonline.vn', $url, $height, $width);
+        $url = self::optimizeOneDomainExternalCdnEXCDNOptimize('https://t.ex-cdn.com/nongnghiep.vn', $url, $height, $width);
         return trim($url);
     }
 
