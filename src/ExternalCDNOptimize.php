@@ -91,7 +91,7 @@ class ExternalCDNOptimize
             array(
                 '//cdn.eva.vn/',
                 '//media.vov.vn/',
-                'https://vntravel.org.vn/',
+                'https://vntravel.org.vn',
                 'i.ex-cdn.com/suckhoecongdongonline.vn/files/',
                 'i.ex-cdn.com/thoidaiplus.suckhoedoisong.vn/files/',
                 'i.ex-cdn.com/nhadautu.vn/files/',
