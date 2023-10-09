@@ -87,6 +87,7 @@ class ExternalCDNOptimize
                 't.ex-cdn.com/giadinhmoi.vn/files/',
                 't.ex-cdn.com/nongnghiep.vn/files/',
                 't.ex-cdn.com/giadinhonline.vn/files/',
+                'yudnifhcy4vod.vcdn.cloud',
             ),
             array(
                 '//cdn.eva.vn/',
@@ -98,6 +99,7 @@ class ExternalCDNOptimize
                 'i.ex-cdn.com/giadinhmoi.vn/files/',
                 'i.ex-cdn.com/nongnghiep.vn/files/',
                 'i.ex-cdn.com/giadinhonline.vn/files/',
+                'cloudvodqh.tek4tv.vn',
             ),
             $url
         );
