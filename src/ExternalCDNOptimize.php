@@ -165,6 +165,41 @@ class ExternalCDNOptimize
         return $url;
     }
 
+    public static function externalDanTriCdnPhotoOriginal($url = '', $removeZoom = false)
+    {
+        $url = trim($url);
+        $cdnDomain = 'https://icdn.dantri.com.vn';
+        // $icdnHostname = 'icdn.dantri.com.vn';
+        $cdnPhotoHostname = 'cdnphoto.dantri.com.vn';
+        $parse = parse_url($url);
+        if (!isset($parse['host']) || !isset($parse['path'])) {
+            return $url;
+        }
+        $urlHost = trim($parse['host']);
+        $urlPath = trim($parse['path']);
+        $paths = explode('/', $urlPath);
+        $countPaths = count($paths);
+        if ($countPaths > 3) {
+            if ($urlHost === $cdnPhotoHostname && empty($paths[0])) {
+                if ($removeZoom === true) {
+                    if ($paths[2] === 'zoom') {
+                        unset($paths[1], $paths[2], $paths[3]);
+                    } elseif ($paths[2] === 'thumb_w') {
+                        unset($paths[1], $paths[2]);
+                    } else {
+                        unset($paths[1]);
+                    }
+                } else {
+                    unset($paths[1]);
+                }
+                $newUrlPath = implode('/', $paths);
+                $newUrl = $cdnDomain . trim($newUrlPath);
+                return trim($newUrl);
+            }
+        }
+        return $url;
+    }
+
     public static function externalCdnWorkWithUrlQueryResize()
     {
         return [
@@ -305,6 +340,7 @@ class ExternalCDNOptimize
         $url = str_replace('https://cdn1.tuoitre.vn/20', 'https://cdn1.tuoitre.vn/zoom/600_315/20', $url);
         $url = str_replace('https://tapchigiaothong.qltns.mediacdn.vn/tapchigiaothong', 'https://tapchigiaothong.qltns.mediacdn.vn/thumb_w/' . trim($width) . '/tapchigiaothong', $url);
         // VC CORP
+        $url = self::optimizeOneDomainCdnVCCorpCMSOptimize('https://icdn.dantri.com.vn', $url, $width);
         $url = self::optimizeOneDomainCdnVCCorpCMSOptimize('https://afamilycdn.com', $url, $width);
         $url = self::optimizeOneDomainCdnVCCorpCMSOptimize('https://cafefcdn.com', $url, $width);
         $url = self::optimizeOneDomainCdnVCCorpCMSOptimize('https://kenh14cdn.com', $url, $width);

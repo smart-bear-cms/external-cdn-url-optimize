@@ -36,3 +36,9 @@ if (!function_exists('smart_bear_cms_external_cdn_url_optimize_yeah1_cms')) {
         return \nguyenanhung\Platforms\SmartBearCMS\Library\ExternalCDNOptimize\ExternalCDNOptimize::externalCdnYeahOneGroupCDNOptimize($url, $width, $height);
     }
 }
+if (!function_exists('smart_bear_cms_external_cdn_url_dantri_original')) {
+    function smart_bear_cms_external_cdn_url_dantri_original($url = '', $removeZoom = false)
+    {
+        return \nguyenanhung\Platforms\SmartBearCMS\Library\ExternalCDNOptimize\ExternalCDNOptimize::externalDanTriCdnPhotoOriginal($url, $removeZoom);
+    }
+}
