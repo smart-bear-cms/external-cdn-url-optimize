@@ -192,6 +192,34 @@ class ExternalCDNOptimize
         return $url;
     }
 
+    public static function externalVtcNewsCdnPhotoThumbnail($url = '', $thumbnail = false, $thumbnailPath = 'th')
+    {
+        $url = trim($url);
+        if (empty($url)) {
+            return $url;
+        }
+        $cdnDomain = 'https://cdn-i.vtcnews.vn';
+        $cdnPhotoHostname = 'cdn-i.vtcnews.vn';
+        $parse = parse_url($url);
+        if (!isset($parse['host'], $parse['path'])) {
+            return $url;
+        }
+        $urlHost = trim($parse['host']);
+        $urlPath = trim($parse['path']);
+        $paths = explode('/', $urlPath);
+        $countPaths = count($paths);
+        if (($countPaths > 3) && $urlHost === $cdnPhotoHostname && empty($paths[0])) {
+            if (($thumbnail === true) && $paths[1] === 'resize') {
+                unset($paths[2]);
+                $paths[2] = $thumbnailPath;
+            }
+            $newUrlPath = implode('/', $paths);
+            $newUrl = $cdnDomain . trim($newUrlPath);
+            return trim($newUrl);
+        }
+        return $url;
+    }
+
     public static function externalDanTriCdnPhotoOriginal($url = '', $removeZoom = false)
     {
         $url = trim($url);
