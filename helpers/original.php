@@ -12,7 +12,7 @@ if (!function_exists('smart_bear_cms_external_cdn_url_vtc_news_original')) {
     }
 }
 if (!function_exists('smart_bear_cms_external_cdn_url_vtc_news_thumbnail')) {
-    function smart_bear_cms_external_cdn_url_vtc_news_thumbnail($url = '', $thumbnail = false, $thumbnailPath = 'th')
+    function smart_bear_cms_external_cdn_url_vtc_news_thumbnail($url = '', $thumbnail = false, $thumbnailPath = 'ma')
     {
         return \nguyenanhung\Platforms\SmartBearCMS\Library\ExternalCDNOptimize\ExternalCDNOptimize::externalVtcNewsCdnPhotoThumbnail($url, $thumbnail, $thumbnailPath);
     }
@@ -30,7 +30,7 @@ if (!function_exists('smart_bear_cms_external_cdn_url_original')) {
     }
 }
 if (!function_exists('smart_bear_cms_external_cdn_url_thumbnail')) {
-    function smart_bear_cms_external_cdn_url_thumbnail($url = '', $thumbnail = false, $thumbnailPath = 'th')
+    function smart_bear_cms_external_cdn_url_thumbnail($url = '', $thumbnail = false, $thumbnailPath = 'ma')
     {
         $url = trim($url);
         if (empty($url)) {

@@ -192,7 +192,7 @@ class ExternalCDNOptimize
         return $url;
     }
 
-    public static function externalVtcNewsCdnPhotoThumbnail($url = '', $thumbnail = false, $thumbnailPath = 'th')
+    public static function externalVtcNewsCdnPhotoThumbnail($url = '', $thumbnail = false, $thumbnailPath = 'ma')
     {
         $url = trim($url);
         if (empty($url)) {
@@ -213,6 +213,7 @@ class ExternalCDNOptimize
                 unset($paths[2]);
                 $paths[2] = $thumbnailPath;
             }
+            ksort($paths);
             $newUrlPath = implode('/', $paths);
             $newUrl = $cdnDomain . trim($newUrlPath);
             return trim($newUrl);
