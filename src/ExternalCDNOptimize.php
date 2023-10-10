@@ -165,37 +165,65 @@ class ExternalCDNOptimize
         return $url;
     }
 
-    public static function externalDanTriCdnPhotoOriginal($url = '', $removeZoom = false)
+    public static function externalVtcNewsCdnPhotoOriginal($url = '', $removeZoom = false)
     {
         $url = trim($url);
-        $cdnDomain = 'https://icdn.dantri.com.vn';
-        // $icdnHostname = 'icdn.dantri.com.vn';
-        $cdnPhotoHostname = 'cdnphoto.dantri.com.vn';
+        if (empty($url)) {
+            return $url;
+        }
+        $cdnDomain = 'https://cdn-i.vtcnews.vn';
+        $cdnPhotoHostname = 'cdn-i.vtcnews.vn';
         $parse = parse_url($url);
-        if (!isset($parse['host']) || !isset($parse['path'])) {
+        if (!isset($parse['host'], $parse['path'])) {
             return $url;
         }
         $urlHost = trim($parse['host']);
         $urlPath = trim($parse['path']);
         $paths = explode('/', $urlPath);
         $countPaths = count($paths);
-        if ($countPaths > 3) {
-            if ($urlHost === $cdnPhotoHostname && empty($paths[0])) {
-                if ($removeZoom === true) {
-                    if ($paths[2] === 'zoom') {
-                        unset($paths[1], $paths[2], $paths[3]);
-                    } elseif ($paths[2] === 'thumb_w') {
-                        unset($paths[1], $paths[2]);
-                    } else {
-                        unset($paths[1]);
-                    }
+        if (($countPaths > 3) && $urlHost === $cdnPhotoHostname && empty($paths[0])) {
+            if (($removeZoom === true) && $paths[1] === 'resize') {
+                unset($paths[1], $paths[2]);
+            }
+            $newUrlPath = implode('/', $paths);
+            $newUrl = $cdnDomain . trim($newUrlPath);
+            return trim($newUrl);
+        }
+        return $url;
+    }
+
+    public static function externalDanTriCdnPhotoOriginal($url = '', $removeZoom = false)
+    {
+        $url = trim($url);
+        if (empty($url)) {
+            return $url;
+        }
+        $cdnDomain = 'https://icdn.dantri.com.vn';
+        // $icdnHostname = 'icdn.dantri.com.vn';
+        $cdnPhotoHostname = 'cdnphoto.dantri.com.vn';
+        $parse = parse_url($url);
+        if (!isset($parse['host'], $parse['path'])) {
+            return $url;
+        }
+        $urlHost = trim($parse['host']);
+        $urlPath = trim($parse['path']);
+        $paths = explode('/', $urlPath);
+        $countPaths = count($paths);
+        if (($countPaths > 3) && ($urlHost === $cdnPhotoHostname && empty($paths[0]))) {
+            if ($removeZoom === true) {
+                if ($paths[2] === 'zoom') {
+                    unset($paths[1], $paths[2], $paths[3]);
+                } elseif ($paths[2] === 'thumb_w') {
+                    unset($paths[1], $paths[2]);
                 } else {
                     unset($paths[1]);
                 }
-                $newUrlPath = implode('/', $paths);
-                $newUrl = $cdnDomain . trim($newUrlPath);
-                return trim($newUrl);
+            } else {
+                unset($paths[1]);
             }
+            $newUrlPath = implode('/', $paths);
+            $newUrl = $cdnDomain . trim($newUrlPath);
+            return trim($newUrl);
         }
         return $url;
     }

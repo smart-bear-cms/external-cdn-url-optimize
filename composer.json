@@ -37,6 +37,7 @@
         "files": [
             "helpers/helpers.php",
             "helpers/optimize.php",
+            "helpers/original.php",
             "helpers/onecms.php",
             "helpers/drupalcms.php"
         ]
