@@ -421,6 +421,9 @@ class ExternalCDNOptimize
         $url = self::optimizeOneDomainCdnVCCorpCMSOptimize('https://tapchigiaothong.qltns.mediacdn.vn', $url, $width);
         $url = self::optimizeOneDomainCdnVCCorpCMSOptimize('https://phapluatbandoc.mediacdn.vn', $url, $width);
         $url = self::optimizeOneDomainCdnVCCorpCMSOptimize('https://giadinh.mediacdn.vn', $url, $width);
+        $url = self::optimizeOneDomainCdnVCCorpCMSOptimize('https://bcp.cdnchinhphu.vn', $url, $width);
+        $url = self::optimizeOneDomainCdnVCCorpCMSOptimize('https://tl.cdnchinhphu.vn', $url, $width);
+        $url = self::optimizeOneDomainCdnVCCorpCMSOptimize('https://tphcm.cdnchinhphu.vn', $url, $width);
 
         return trim($url);
     }
