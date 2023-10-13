@@ -556,6 +556,7 @@ class ExternalCDNOptimize
     {
         return array(
             'vb.1cdn.vn',
+            'vnp.1cdn.vn',
             'vlr.1cdn.vn',
             'hgth.1cdn.vn',
             'hnm.1cdn.vn',
@@ -586,6 +587,7 @@ class ExternalCDNOptimize
             return $url;
         }
         // OneCMS CDN
+        $url = self::optimizeOneDomainCdnOneCMSOptimize('https://vnp.1cdn.vn', $url, $width, $height);
         $url = self::optimizeOneDomainCdnOneCMSOptimize('https://vb.1cdn.vn', $url, $width, $height);
         $url = self::optimizeOneDomainCdnOneCMSOptimize('https://vlr.1cdn.vn', $url, $width, $height);
         $url = self::optimizeOneDomainCdnOneCMSOptimize('https://hgth.1cdn.vn', $url, $width, $height);
