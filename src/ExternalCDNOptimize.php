@@ -354,6 +354,26 @@ class ExternalCDNOptimize
         return trim($url);
     }
 
+    protected static function optimizeOneDomainCdnTTXVNCMSOptimize($domain, $url = '', $width = 345, $height = 200)
+    {
+        $domain = trim($domain);
+        $url = str_replace(trim($domain) . '/1200x630/Uploaded', trim($domain) . '/t' . trim($width) . '/Uploaded', $url);
+        $url = str_replace(trim($domain) . '/t460/Uploaded', trim($domain) . '/t' . trim($width) . '/Uploaded', $url);
+        $url = str_replace(trim($domain) . '/Uploaded', trim($domain) . '/t' . trim($width) . '/Uploaded', $url);
+        return trim($url);
+    }
+
+    public static function externalCdnTTXVNCMSOptimize($url = '', $width = 345, $height = 200)
+    {
+        $url = trim($url);
+        if (empty($url)) {
+            return $url;
+        }
+        $url = self::optimizeOneDomainCdnTTXVNCMSOptimize('https://cdnimg.vietnamplus.vn', $url, $width, $height);
+        $url = self::optimizeOneDomainCdnTTXVNCMSOptimize('https://img.dantocmiennui.vn', $url, $width, $height);
+        return trim($url);
+    }
+
     protected static function optimizeOneDomainCdnVCCorpCMSOptimize($domain, $url = '', $width = 345)
     {
         $domain = trim($domain);
@@ -682,6 +702,7 @@ class ExternalCDNOptimize
         $url = self::externalCdnNetLinkCMSOptimize($url, $width, $height);
         $url = self::externalCdnEXCDNOptimize($url, $width, $height);
         $url = self::externalCdnYeahOneGroupCDNOptimize($url, $width, $height);
+        $url = self::externalCdnTTXVNCMSOptimize($url, $width, $height);
         $url = self::externalCdnThumbPrefix($url, $width, $height);
         return trim($url);
     }
