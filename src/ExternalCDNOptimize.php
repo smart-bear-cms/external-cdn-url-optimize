@@ -97,6 +97,7 @@ class ExternalCDNOptimize
                 'i.ex-cdn.com/suckhoecongdongonline.vn/files/',
                 'i.ex-cdn.com/thoidaiplus.suckhoedoisong.vn/files/',
                 'i.ex-cdn.com/nhadautu.vn/files/',
+                'i.ex-cdn.com/vovgiaothong.vn/files/',
                 'i.ex-cdn.com/giadinhmoi.vn/files/',
                 'i.ex-cdn.com/nongnghiep.vn/files/',
                 'i.ex-cdn.com/giadinhonline.vn/files/',
