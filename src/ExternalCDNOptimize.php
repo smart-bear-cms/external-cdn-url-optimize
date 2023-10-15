@@ -724,6 +724,7 @@ class ExternalCDNOptimize
         $url = str_replace('https://static.kinhtedothi.vn/600x315/images', 'https://static.kinhtedothi.vn/640x360/images', $url);
         $url = str_replace('https://static.kinhtedothi.vn/images', 'https://static.kinhtedothi.vn/640x360/images', $url);
         $url = str_replace('https://media.tapchixaydung.vn/resize_x500x/mediav2', 'https://media.tapchixaydung.vn/resize_x' . trim($width) . 'x/mediav2', $url);
+        $url = str_replace('https://media.tapchinongthonmoi.vn/resize_x500x/mediav2', 'https://media.tapchinongthonmoi.vn/resize_x' . trim($width) . 'x/mediav2', $url);
         $url = str_replace('https://media.tapchixaydung.vn/mediav2', 'https://media.tapchixaydung.vn/resize_x' . trim($width) . 'x/mediav2', $url);
         $url = str_replace('https://cdnmedia.webthethao.vn/thumb/600-315/uploads', 'https://cdnmedia.webthethao.vn/thumb/' . trim($width) . 'x' . trim($height) . '/uploads', $url);
         $url = str_replace('https://cdnmedia.webthethao.vn/uploads', 'https://cdnmedia.webthethao.vn/thumb/' . trim($width) . 'x' . trim($height) . '/uploads', $url);
