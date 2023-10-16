@@ -674,6 +674,7 @@ class ExternalCDNOptimize
         $url = self::optimizeOneDomainCdnNetLinkCMSOptimize('https://media.techz.vn', $url, $width, $height);
         $url = self::optimizeOneDomainCdnNetLinkCMSOptimize('https://media.baodautu.vn', $url, $width, $height);
         $url = self::optimizeOneDomainCdnNetLinkCMSOptimize('https://media.baodansinh.vn', $url, $width, $height);
+        $url = self::optimizeOneDomainCdnNetLinkCMSOptimize('https://media.suckhoecong.vn', $url, $width, $height);
         return trim($url);
     }
 
