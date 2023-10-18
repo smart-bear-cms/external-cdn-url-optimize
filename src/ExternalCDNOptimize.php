@@ -537,6 +537,10 @@ class ExternalCDNOptimize
         }
         $hostLength = strlen($hostname);
         $oneCmsCdn = '1cdn.vn';
+        $oneCmsCdnVovLive = 'cdn.vovlive.vn';
+        if ($hostname === $oneCmsCdnVovLive) {
+            return true;
+        }
         $oneCmsCdnLength = strlen($oneCmsCdn);
         $startCheck = $hostLength - $oneCmsCdnLength;
         $domain = substr($hostname, $startCheck, $hostLength);
@@ -579,6 +583,7 @@ class ExternalCDNOptimize
     public static function externalListCdnOfOneCMS()
     {
         return array(
+            'cdn.vovlive.vn',
             'vb.1cdn.vn',
             'vnp.1cdn.vn',
             'vlr.1cdn.vn',
@@ -632,6 +637,7 @@ class ExternalCDNOptimize
         $url = self::optimizeOneDomainCdnOneCMSOptimize('https://bbt.1cdn.vn', $url, $width, $height);
         $url = self::optimizeOneDomainCdnOneCMSOptimize('https://daknong.1cdn.vn', $url, $width, $height);
         $url = self::optimizeOneDomainCdnOneCMSOptimize('https://nads.1cdn.vn', $url, $width, $height);
+        $url = self::optimizeOneDomainCdnOneCMSOptimize('https://cdn.vovlive.vn', $url, $width, $height);
         $url = self::optimizeOneDomainCdnOneCMSOptimize('https://images.baodantoc.vn', $url, $width, $height);
         $url = self::optimizeOneDomainCdnOneCMSOptimize('https://image.theleader.vn', $url, $width, $height);
         return trim($url);
