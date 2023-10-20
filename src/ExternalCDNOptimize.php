@@ -519,6 +519,12 @@ class ExternalCDNOptimize
         $url = str_replace('https://cdnmedia.tinmoi.vn/resize_600x315/upload/', 'https://cdnmedia.tinmoi.vn/resize_' . trim($width) . 'x' . trim($height) . '/upload/', $url);
         $url = str_replace('https://cdnmedia.tinmoi.vn/resize_upload/', 'https://cdnmedia.tinmoi.vn/resize_' . trim($width) . 'x' . trim($height) . '/upload/', $url);
         $url = str_replace('https://cdnmedia.tinmoi.vn/upload/', 'https://cdnmedia.tinmoi.vn/resize_' . trim($width) . 'x' . trim($height) . '/upload/', $url);
+        $url = str_replace('https://media.2dep.vn/resize_1200x630/upload/', 'https://media.2dep.vn/resize_' . trim($width) . 'x' . trim($height) . '/upload/', $url);
+        $url = str_replace('https://media.2dep.vn/resize_680x415/upload/', 'https://media.2dep.vn/resize_' . trim($width) . 'x' . trim($height) . '/upload/', $url);
+        $url = str_replace('https://media.2dep.vn/resize_600x315/upload/', 'https://media.2dep.vn/resize_' . trim($width) . 'x' . trim($height) . '/upload/', $url);
+        $url = str_replace('https://media.2dep.vn/resize_upload/', 'https://media.2dep.vn/resize_' . trim($width) . 'x' . trim($height) . '/upload/', $url);
+        $url = str_replace('https://media.2dep.vn/upload/', 'https://media.2dep.vn/resize_' . trim($width) . 'x' . trim($height) . '/upload/', $url);
+
         return trim($url);
     }
 
