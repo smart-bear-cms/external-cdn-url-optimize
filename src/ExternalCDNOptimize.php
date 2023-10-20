@@ -80,6 +80,7 @@ class ExternalCDNOptimize
             array(
                 '//image-us.eva.vn/',
                 '//vov-media.emitech.vn/',
+                'tq5.mediacdn.vn/',
                 'https://vietnamtraveller.net.vn',
                 't.ex-cdn.com/suckhoecongdongonline.vn/files/',
                 't.ex-cdn.com/thoidaiplus.suckhoedoisong.vn/files/',
@@ -93,6 +94,7 @@ class ExternalCDNOptimize
             array(
                 '//cdn.eva.vn/',
                 '//media.vov.vn/',
+                'toquoc.mediacdn.vn/',
                 'https://vntravel.org.vn',
                 'i.ex-cdn.com/suckhoecongdongonline.vn/files/',
                 'i.ex-cdn.com/thoidaiplus.suckhoedoisong.vn/files/',
