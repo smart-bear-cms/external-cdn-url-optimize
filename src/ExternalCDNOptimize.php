@@ -434,7 +434,6 @@ class ExternalCDNOptimize
         $url = self::optimizeOneDomainCdnVCCorpCMSOptimize('https://danviet.mediacdn.vn', $url, $width);
         $url = self::optimizeOneDomainCdnVCCorpCMSOptimize('https://vtv1.mediacdn.vn', $url, $width);
         $url = self::optimizeOneDomainCdnVCCorpCMSOptimize('https://autopro8.mediacdn.vn', $url, $width);
-        $url = self::optimizeOneDomainCdnVCCorpCMSOptimize('https://toquoc.mediacdn.vn', $url, $width);
         $url = self::optimizeOneDomainCdnVCCorpCMSOptimize('https://thethaovanhoa.mediacdn.vn', $url, $width);
         $url = self::optimizeOneDomainCdnVCCorpCMSOptimize('https://phunuvietnam.mediacdn.vn', $url, $width);
         $url = self::optimizeOneDomainCdnVCCorpCMSOptimize('https://nld.mediacdn.vn', $url, $width);
@@ -452,6 +451,16 @@ class ExternalCDNOptimize
         $url = self::optimizeOneDomainCdnVCCorpCMSOptimize('https://dntt.mediacdn.vn', $url, $width);
         $url = self::optimizeOneDomainCdnVCCorpCMSOptimize('https://sport5.mediacdn.vn', $url, $width);
         $url = self::optimizeOneDomainCdnVCCorpCMSOptimize('https://phunuso.mediacdn.vn', $url, $width);
+        $url = self::optimizeOneDomainCdnVCCorpCMSOptimize('https://toquoc.mediacdn.vn', $url, $width);
+        $url = self::optimizeOneDomainCdnVCCorpCMSOptimize('https://tq1.mediacdn.vn', $url, $width);
+        $url = self::optimizeOneDomainCdnVCCorpCMSOptimize('https://tq2.mediacdn.vn', $url, $width);
+        $url = self::optimizeOneDomainCdnVCCorpCMSOptimize('https://tq3.mediacdn.vn', $url, $width);
+        $url = self::optimizeOneDomainCdnVCCorpCMSOptimize('https://tq4.mediacdn.vn', $url, $width);
+        $url = self::optimizeOneDomainCdnVCCorpCMSOptimize('https://tq5.mediacdn.vn', $url, $width);
+        $url = self::optimizeOneDomainCdnVCCorpCMSOptimize('https://tq6.mediacdn.vn', $url, $width);
+        $url = self::optimizeOneDomainCdnVCCorpCMSOptimize('https://tq7.mediacdn.vn', $url, $width);
+        $url = self::optimizeOneDomainCdnVCCorpCMSOptimize('https://tq8.mediacdn.vn', $url, $width);
+        $url = self::optimizeOneDomainCdnVCCorpCMSOptimize('https://tq9.mediacdn.vn', $url, $width);
 
         return trim($url);
     }
