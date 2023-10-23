@@ -499,6 +499,7 @@ class ExternalCDNOptimize
         $url = self::optimizeOneDomainExternalCdnEXCDNOptimize('https://t.ex-cdn.com/giadinhonline.vn', $url, $height, $width);
         $url = self::optimizeOneDomainExternalCdnEXCDNOptimize('https://t.ex-cdn.com/nongnghiep.vn', $url, $height, $width);
         $url = self::optimizeOneDomainExternalCdnEXCDNOptimize('https://t.ex-cdn.com/60giay.com', $url, $height, $width);
+        $url = self::optimizeOneDomainExternalCdnEXCDNOptimize('https://t2.ex-cdn.com/cpcs.vn', $url, $height, $width);
         return trim($url);
     }
 
