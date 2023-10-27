@@ -89,6 +89,7 @@ class ExternalCDNOptimize
                 't.ex-cdn.com/giadinhmoi.vn/files/',
                 't.ex-cdn.com/nongnghiep.vn/files/',
                 't.ex-cdn.com/giadinhonline.vn/files/',
+                't.ex-cdn.com/vietpress.vn/files/',
                 'yudnifhcy4vod.vcdn.cloud',
             ),
             array(
@@ -103,6 +104,7 @@ class ExternalCDNOptimize
                 'i.ex-cdn.com/giadinhmoi.vn/files/',
                 'i.ex-cdn.com/nongnghiep.vn/files/',
                 'i.ex-cdn.com/giadinhonline.vn/files/',
+                'i.ex-cdn.com/vietpress.vn/files/',
                 'cloudvodqh.tek4tv.vn',
             ),
             $url
@@ -491,6 +493,7 @@ class ExternalCDNOptimize
         $url = self::optimizeOneDomainExternalCdnEXCDNOptimize('https://media.sohuutritue.net.vn', $url, $height, $width);
         $url = self::optimizeOneDomainExternalCdnEXCDNOptimize('https://media.bongda.com.vn', $url, $height, $width);
         $url = self::optimizeOneDomainExternalCdnEXCDNOptimize('https://media.phunumoi.net.vn', $url, $height, $width);
+        $url = self::optimizeOneDomainExternalCdnEXCDNOptimize('https://media.songdep.com.vn', $url, $height, $width);
         $url = self::optimizeOneDomainExternalCdnEXCDNOptimize('https://t.ex-cdn.com/vovgiaothong.vn', $url, $height, $width);
         $url = self::optimizeOneDomainExternalCdnEXCDNOptimize('https://t.ex-cdn.com/thoidaiplus.suckhoedoisong.vn', $url, $height, $width);
         $url = self::optimizeOneDomainExternalCdnEXCDNOptimize('https://t.ex-cdn.com/suckhoecongdongonline.vn', $url, $height, $width);
@@ -498,6 +501,7 @@ class ExternalCDNOptimize
         $url = self::optimizeOneDomainExternalCdnEXCDNOptimize('https://t.ex-cdn.com/giadinhmoi.vn', $url, $height, $width);
         $url = self::optimizeOneDomainExternalCdnEXCDNOptimize('https://t.ex-cdn.com/giadinhonline.vn', $url, $height, $width);
         $url = self::optimizeOneDomainExternalCdnEXCDNOptimize('https://t.ex-cdn.com/nongnghiep.vn', $url, $height, $width);
+        $url = self::optimizeOneDomainExternalCdnEXCDNOptimize('https://t.ex-cdn.com/vietpress.vn', $url, $height, $width);
         $url = self::optimizeOneDomainExternalCdnEXCDNOptimize('https://t.ex-cdn.com/60giay.com', $url, $height, $width);
         $url = self::optimizeOneDomainExternalCdnEXCDNOptimize('https://t2.ex-cdn.com/cpcs.vn', $url, $height, $width);
         return trim($url);
@@ -564,10 +568,7 @@ class ExternalCDNOptimize
         $startCheck = $hostLength - $oneCmsCdnLength;
         $domain = substr($hostname, $startCheck, $hostLength);
         $endDomain = trim($domain);
-        if ($endDomain === $oneCmsCdn) {
-            return true;
-        }
-        return false;
+        return $endDomain === $oneCmsCdn;
     }
 
     public static function externalCdnIsOfOneCMS($url = '')
