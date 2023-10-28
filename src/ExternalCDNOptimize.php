@@ -358,6 +358,7 @@ class ExternalCDNOptimize
         $url = self::optimizeOneDomainCdnEPICMSOptimize('https://image.giacngo.vn', $url, $width, $height);
         $url = self::optimizeOneDomainCdnEPICMSOptimize('https://image.thuonggiaonline.vn', $url, $width, $height);
         $url = self::optimizeOneDomainCdnEPICMSOptimize('https://image.sggp.org.vn', $url, $width, $height);
+        $url = self::optimizeOneDomainCdnEPICMSOptimize('https://image.tinnhanhchungkhoan.vn', $url, $width, $height);
         $url = self::optimizeOneDomainCdnEPICMSOptimize('https://img.giaoduc.net.vn', $url, $width, $height);
         return trim($url);
     }
