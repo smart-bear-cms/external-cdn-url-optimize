@@ -758,6 +758,8 @@ class ExternalCDNOptimize
         $url = str_replace('https://media.tapchixaydung.vn/mediav2', 'https://media.tapchixaydung.vn/resize_x' . trim($width) . 'x/mediav2', $url);
         $url = str_replace('https://cdnmedia.webthethao.vn/thumb/600-315/uploads', 'https://cdnmedia.webthethao.vn/thumb/' . trim($width) . 'x' . trim($height) . '/uploads', $url);
         $url = str_replace('https://cdnmedia.webthethao.vn/uploads', 'https://cdnmedia.webthethao.vn/thumb/' . trim($width) . 'x' . trim($height) . '/uploads', $url);
+        $url = str_replace('https://media.truyenhinhdulich.vn/thumb/600-315/upload', 'https://media.truyenhinhdulich.vn/thumb/' . trim($width) . 'x' . trim($height) . '/upload', $url);
+        $url = str_replace('https://media.truyenhinhdulich.vn/upload', 'https://media.truyenhinhdulich.vn/thumb/' . trim($width) . 'x' . trim($height) . '/upload', $url);
         // Other
         $url = str_replace('https://news-thumb2.ymgstatic.com/YanThumbNews/', 'https://static2.yan.vn/' . trim($width) . 'x' . trim($height) . '/YanThumbNews/', $url);
         return trim($url);
