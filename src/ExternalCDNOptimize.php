@@ -511,6 +511,7 @@ class ExternalCDNOptimize
         $url = self::optimizeOneDomainCdnVCCorpCMSOptimize('https://tl.cdnchinhphu.vn', $url, $width);
         $url = self::optimizeOneDomainCdnVCCorpCMSOptimize('https://tphcm.cdnchinhphu.vn', $url, $width);
         $url = self::optimizeOneDomainCdnVCCorpCMSOptimize('https://xdcs.cdnchinhphu.vn', $url, $width);
+        $url = self::optimizeOneDomainCdnVCCorpCMSOptimize('https://tc.cdnchinhphu.vn', $url, $width);
         $url = self::optimizeOneDomainCdnVCCorpCMSOptimize('https://dntt.mediacdn.vn', $url, $width);
         $url = self::optimizeOneDomainCdnVCCorpCMSOptimize('https://sport5.mediacdn.vn', $url, $width);
         $url = self::optimizeOneDomainCdnVCCorpCMSOptimize('https://phunuso.mediacdn.vn', $url, $width);
