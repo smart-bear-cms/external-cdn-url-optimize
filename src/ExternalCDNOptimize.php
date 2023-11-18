@@ -667,6 +667,7 @@ class ExternalCDNOptimize
         return array(
             'cdn.vovlive.vn',
             'vb.1cdn.vn',
+            'ddk.1cdn.vn',
             'vnp.1cdn.vn',
             'vlr.1cdn.vn',
             'hgth.1cdn.vn',
@@ -719,6 +720,7 @@ class ExternalCDNOptimize
         $url = self::optimizeOneDomainCdnOneCMSOptimize('https://bbt.1cdn.vn', $url, $width, $height);
         $url = self::optimizeOneDomainCdnOneCMSOptimize('https://daknong.1cdn.vn', $url, $width, $height);
         $url = self::optimizeOneDomainCdnOneCMSOptimize('https://nads.1cdn.vn', $url, $width, $height);
+        $url = self::optimizeOneDomainCdnOneCMSOptimize('https://ddk.1cdn.vn', $url, $width, $height);
         $url = self::optimizeOneDomainCdnOneCMSOptimize('https://cdn.vovlive.vn', $url, $width, $height);
         $url = self::optimizeOneDomainCdnOneCMSOptimize('https://images.baodantoc.vn', $url, $width, $height);
         $url = self::optimizeOneDomainCdnOneCMSOptimize('https://image.theleader.vn', $url, $width, $height);
