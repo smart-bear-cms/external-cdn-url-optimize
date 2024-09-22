@@ -1,3 +1,10 @@
+[![Latest Stable Version](https://img.shields.io/packagist/v/smart-bear-cms/external-cdn-url-optimize.svg?style=flat-square)](https://packagist.org/packages/smart-bear-cms/external-cdn-url-optimize)
+[![Total Downloads](https://img.shields.io/packagist/dt/smart-bear-cms/external-cdn-url-optimize.svg?style=flat-square)](https://packagist.org/packages/smart-bear-cms/external-cdn-url-optimize)
+[![Daily Downloads](https://img.shields.io/packagist/dd/smart-bear-cms/external-cdn-url-optimize.svg?style=flat-square)](https://packagist.org/packages/smart-bear-cms/external-cdn-url-optimize)
+[![Monthly Downloads](https://img.shields.io/packagist/dm/smart-bear-cms/external-cdn-url-optimize.svg?style=flat-square)](https://packagist.org/packages/smart-bear-cms/external-cdn-url-optimize)
+[![License](https://img.shields.io/packagist/l/smart-bear-cms/external-cdn-url-optimize.svg?style=flat-square)](https://packagist.org/packages/smart-bear-cms/external-cdn-url-optimize)
+[![PHP Version Require](https://img.shields.io/packagist/dependency-v/smart-bear-cms/external-cdn-url-optimize/php)](https://packagist.org/packages/smart-bear-cms/external-cdn-url-optimize)
+
 # Smart Bear CMS Packages: External CDN Optimize
 
 Simple Helper, basic, simple and lightweight
